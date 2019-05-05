@@ -126,12 +126,7 @@ theorems-ams-extended
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename network.png
-
-\end_inset
-
-
+– להשלים תמונת רשת –
 \end_layout
 
 \begin_layout Standard
@@ -181,7 +176,11 @@ theorems-ams-extended
 \end_layout
 
 \begin_layout Subsection
-אלגוריתם חמדן לפתרון הבעיה
+אלגוריתם חמדן )
+\lang english
+Greedy
+\lang hebrew
+( לפתרון הבעיה
 \end_layout
 
 \begin_layout Standard

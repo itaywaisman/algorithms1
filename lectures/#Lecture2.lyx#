@@ -748,10 +748,6 @@ do
 
 \begin_deeper
 \begin_layout Algorithm
-
-\end_layout
-
-\begin_layout Algorithm
 :
 \begin_inset Formula $DFS-VISIT(u\in V)$
 \end_inset
@@ -759,7 +755,6 @@ do
 
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
@@ -787,6 +782,7 @@ do
 
 \end_layout
 
+\begin_deeper
 \begin_layout Algorithm
 
 \series bold
@@ -852,10 +848,6 @@ do
 \begin_inset Formula $f[u]\leftarrow i$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Algorithm
 
 \end_layout
 

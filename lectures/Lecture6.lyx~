@@ -1329,8 +1329,17 @@ Dijkstra
 .
 \end_layout
 
-\begin_layout Proof
+\begin_layout Standard
+טענה זו היא בדיוק מה שאנחנו רוצים להוכיח כי למעשה ממנה נובע שבסיום האלגוריתם
+ לכל קשת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
 
+ יתקיים: 
+\begin_inset Formula $d(v)\le d(u)+w(u,v)$
+\end_inset
+
+.
 \end_layout
 
 \end_body

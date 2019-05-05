@@ -7,19 +7,20 @@
 \textclass article
 \use_default_options true
 \begin_modules
-algorithm2e
+theorems-ams-bytype
+theorems-ams-extended-bytype
 \end_modules
 \maintain_unincluded_children false
 \language hebrew
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "default" "David"
 \font_sans "default" "default"
-\font_typewriter "default" "default"
+\font_typewriter "default" "Miriam"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
@@ -34,7 +35,7 @@ algorithm2e
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
@@ -324,10 +325,6 @@ Output
 
 \begin_layout Algorithm
 
-\end_layout
-
-\begin_layout Algorithm
-
 \series bold
 \lang english
 (1) for
@@ -341,10 +338,10 @@ Output
 do
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
+1.1 
 \begin_inset Formula $d[v]\leftarrow0$
 \end_inset
 
@@ -355,11 +352,10 @@ do
 
 \end_layout
 
-\end_deeper
 \begin_layout Algorithm
 
 \lang english
-mark all edges 
+1.2 mark all edges 
 \begin_inset Quotes eld
 \end_inset
 
@@ -369,10 +365,6 @@ unused
 
 .
 \lang hebrew
-
-\begin_inset Newline newline
-\end_inset
-
 
 \begin_inset Formula $i\leftarrow0,v\leftarrow s$
 \end_inset
@@ -384,7 +376,8 @@ unused
 
 \series bold
 \lang english
-(2) 
+1.3.
+ 
 \series default
 
 \begin_inset Formula $i\leftarrow i+1,d[v]\leftarrow i$
@@ -397,7 +390,8 @@ unused
 
 \series bold
 \lang english
-(3) while
+3.
+ while
 \series default
  there are unused out-edges from 
 \begin_inset Formula $v$
@@ -410,11 +404,10 @@ do
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
-choose unused edge 
+3.1 choose unused edge 
 \begin_inset Formula $(v,u)$
 \end_inset
 
@@ -433,7 +426,7 @@ used
 
 \series bold
 \lang english
-if
+3.2 if
 \series default
  
 \begin_inset Formula $d[u]=0$
@@ -446,23 +439,22 @@ do
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
+3.2.1 
 \begin_inset Formula $\pi[u]\leftarrow v,v\leftarrow u,i\leftarrow i+1,d[v]\leftarrow i$
 \end_inset
 
 
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Algorithm
 
 \series bold
 \lang english
-(4) if
+4.
+ if
 \series default
  
 \begin_inset Formula $\pi[v]\ne null$
@@ -473,10 +465,10 @@ do
 do
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
+4.1 
 \begin_inset Formula $v\leftarrow\pi[v]$
 \end_inset
 
@@ -487,17 +479,17 @@ do
 
 \series bold
 \lang english
-goto
+4.2 goto
 \series default
  (3)
 \end_layout
 
-\end_deeper
 \begin_layout Algorithm
 
 \series bold
 \lang english
-(5) else if 
+5.
+ else if 
 \series default
 there is 
 \begin_inset Formula $u\in V$
@@ -514,10 +506,10 @@ do
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
+5.1 
 \begin_inset Formula $v\leftarrow u$
 \end_inset
 
@@ -528,17 +520,16 @@ do
 
 \series bold
 \lang english
-goto
+5.2 goto
 \series default
  (2)
 \end_layout
 
-\end_deeper
 \begin_layout Algorithm
 
 \series bold
 \lang english
-stop
+6 stop
 \end_layout
 
 \begin_layout Subsection
@@ -729,7 +720,6 @@ for
 do
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \series bold
@@ -747,7 +737,6 @@ do
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
@@ -757,7 +746,7 @@ do
 
 \end_layout
 
-\end_deeper
+\begin_deeper
 \begin_layout Algorithm
 
 \end_layout
@@ -1890,10 +1879,6 @@ DFS
 \begin_inset Formula $\blacksquare$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

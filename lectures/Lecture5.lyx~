@@ -816,7 +816,114 @@ Kruskal
  היתה צריכה להצבע באיטרציה קודמת וזו סתירה.
 \end_layout
 
+\begin_layout Section
+מסלולים קלים ביותר
+\end_layout
+
 \begin_layout Standard
+נתון: גרף מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ ופונקצית משלק 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ משקל של מסלול 
+\begin_inset Formula $p$
+\end_inset
+
+מוגדר להיות סך משקלי הקשתות ב-
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\begin_inset Formula $w(p)\equiv\sum_{e\in p}w(e)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מטרה: בהינתן שני צמתים 
+\begin_inset Formula $s$
+\end_inset
+
+ו-
+\begin_inset Formula $t$
+\end_inset
+
+ מה הוא המסלול הקל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $t$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Remark*
+אם 
+\begin_inset Formula $p$
+\end_inset
+
+ מסלול קל ביותר מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ אז כל תת-מסלול של 
+\begin_inset Formula $p$
+\end_inset
+
+ גם הוא קל ביותר.
+\end_layout
+
+\begin_layout Proof
+נסתכל על המסלול 
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\backslash
+
+\begin_inset Formula 
+\[
+u=u_{0}\rightarrow u_{1}...\rightarrow u_{k}=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נסתכל על תת-המסלול מ
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ ל-
+\begin_inset Formula $u_{j}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $i<j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מתקיים: 
+\begin_inset Formula $w(p)=w(p')+w(p_{i})+w(p_{j})$
+\end_inset
+
 
 \end_layout
 
