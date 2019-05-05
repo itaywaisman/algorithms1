@@ -802,7 +802,6 @@ for
 do
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \series bold
@@ -820,7 +819,6 @@ do
 :
 \end_layout
 
-\begin_deeper
 \begin_layout Algorithm
 
 \lang english
@@ -839,8 +837,6 @@ do
 
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Algorithm
 
 \lang english
