@@ -1,0 +1,1077 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+fixltx2e
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "FrankRuehl"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תרגול
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Section
+תזכורת 
+\end_layout
+
+\begin_layout Enumerate
+מיון טופולוגי: 
+\begin_inset Formula $O(|V|+|E|)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+אלגוריתמים 
+\lang english
+BFS/DFS: 
+\begin_inset Formula $O(|V|+|E|)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+משפט המסלול הלבן: עבור הרצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+DFS
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על גרף ושני צמתים 
+\begin_inset Formula $u,v$
+\end_inset
+
+: 
+\begin_inset Formula $u$
+\end_inset
+
+ צאצא של 
+\begin_inset Formula $v$
+\end_inset
+
+ 
+\begin_inset Formula $\iff$
+\end_inset
+
+ בזמן 
+\begin_inset Formula $d(v)$
+\end_inset
+
+ קיים מסלול לבן מ-
+\begin_inset Formula $v$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+שורש של גרף
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף מכוון.
+ יהא 
+\begin_inset Formula $r\in V$
+\end_inset
+
+.
+ נאמר כי 
+\begin_inset Formula $r$
+\end_inset
+
+ שורש אם לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ קיים מסלול מ-
+\begin_inset Formula $r$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+דוגמאות
+\end_layout
+
+\begin_layout Description
+סימון: 
+\begin_inset Formula $R_{G}$
+\end_inset
+
+ - קבוצת השורשים בגרף 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+דוגדמה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- גרף שרוך
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\rightarrow B\rightarrow C\rightarrow D$
+\end_inset
+
+.
+ בגרף זה מתקיים כי 
+\begin_inset Formula $R_{G}=\{A\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+דוגמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- גרף מעגלי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A\rightarrow B\rightarrow C\rightarrow A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בגרף זה מתקיים 
+\begin_inset Formula $R_{G}=V$
+\end_inset
+
+ כי כולם מקיימים את הגדרת השורש.
+\end_layout
+
+\begin_layout Section
+תרגיל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+נתון גרף מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ הוכיחו כי בכל ריצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+DFS
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $G$
+\end_inset
+
+, כל השורשים נמצאים בעץ ה-
+\lang english
+DFS
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+האחרון.
+\end_layout
+
+\begin_layout Subsection
+פתרון
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $r$
+\end_inset
+
+ שורש, ונניח בשלילה ש-
+\begin_inset Formula $r$
+\end_inset
+
+ לא שייך לעץ ה-
+\lang english
+DFS
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+האחרון.
+ יהא 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ צומת כלשהו בעץ ה-
+\begin_inset Formula $DFS$
+\end_inset
+
+ האחרון.
+ מכיוון ש-
+\begin_inset Formula $r$
+\end_inset
+
+ שורש, קיים מסלול מ-
+\begin_inset Formula $r$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+.
+ נסמן ב-
+\begin_inset Formula $u$
+\end_inset
+
+ את הצומת הראשון במסלול ששייך לעץ האחרון, וב-
+\begin_inset Formula $w$
+\end_inset
+
+ את הצומת במסלול שנמצא בדיוק לפני 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ בזמן 
+\begin_inset Formula $d(w)$
+\end_inset
+
+ הקשת 
+\begin_inset Formula $w\rightarrow u$
+\end_inset
+
+ מהווה מסלול לבן מ-
+\begin_inset Formula $w$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $u$
+\end_inset
+
+ צאצא של 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ אבל 
+\begin_inset Formula $u$
+\end_inset
+
+ ו-
+\begin_inset Formula $w$
+\end_inset
+
+ נמצאים בעצים שונים ולכן לא יכולים להיות עם יחס אב-בן ולכן סתירה.
+\end_layout
+
+\begin_layout Section
+תרגיל
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+נתון גרף 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+, הציעו אלגוריתם המוצא שורש ב-
+\begin_inset Formula $G$
+\end_inset
+
+, או מודיע כי לא קיים שורש כזה.
+\end_layout
+
+\begin_layout Subsection
+פתרון
+\end_layout
+
+\begin_layout Enumerate
+נריץ
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+DFS
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+ניקח את עץ ה-
+\begin_inset Formula $DFS$
+\end_inset
+
+ האחרון, ונבחר את השורש שלו 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+נבדוק אם הוא שורש על ידי הרצת 
+\begin_inset Formula $DFS$
+\end_inset
+
+ )או 
+\begin_inset Formula $BFS$
+\end_inset
+
+(, כלומר נבדוק האם כל הצמתים ישיגים מ-
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+אם כן - החזר את 
+\begin_inset Formula $u$
+\end_inset
+
+, אחרת החזר כי לא קיים שורש.
+\end_layout
+
+\begin_layout Standard
+סיבוכיות: 
+\begin_inset Formula $O(|V|+|E|)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+אלגוריתם למציאת כל שורשי גרף
+\end_layout
+
+\begin_layout Standard
+הרץ 
+\begin_inset Formula $DFS$
+\end_inset
+
+ על 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+יהא 
+\begin_inset Formula $u$
+\end_inset
+
+ שורש העץ האחרון.
+\end_layout
+
+\begin_layout Enumerate
+בדוק האם קיים צומת שאינו ישיג מ-
+\begin_inset Formula $u$
+\end_inset
+
+ על ידי הרצת 
+\begin_inset Formula $DFS$
+\end_inset
+
+ )או 
+\begin_inset Formula $BFS$
+\end_inset
+
+(
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם כן - החזר קבוצה ריקה
+\end_layout
+
+\begin_layout Enumerate
+אחרת - החזר את הקבוצה 
+\begin_inset Formula $\{x\in V|\text{there exists a path from \ensuremath{x} to \ensuremath{u} \}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+צור גרף חדש בו כל כיווני הקשתות הפוכות.
+\end_layout
+
+\begin_layout Enumerate
+בצע אלגוריתם 
+\begin_inset Formula $DFS$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+רכיבים קשירים היטב
+\end_layout
+
+\begin_layout Subsection
+הגדרה
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף מכוון.
+ תהא 
+\begin_inset Formula $U\subseteq V$
+\end_inset
+
+ קבוצת צמתים.
+ נאמר כי 
+\begin_inset Formula $U$
+\end_inset
+
+ קשירה היטה אם לכל 
+\begin_inset Formula $u,v\in U$
+\end_inset
+
+ קיים מסלול מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ וגם להיפך.
+ בנוסף נאמר כי ׂ
+\begin_inset Formula $V$
+\end_inset
+
+ רכיב קשיר היטב אם 
+\begin_inset Formula $U$
+\end_inset
+
+ קשירה היטב ולכל 
+\begin_inset Formula $x\in V/U$
+\end_inset
+
+ הקבוצה 
+\begin_inset Formula $V\cup\{x\}$
+\end_inset
+
+ לא קשירה היטב.
+\end_layout
+
+\begin_layout Subsection
+הגדרה שקולה )פחות נוחה, אך פורמאלית(
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף מכוון.
+ רכיב קשיר היטב ב-
+\begin_inset Formula $G$
+\end_inset
+
+ הוא מחלקת שקילות של היחס:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R=\{(u,v)|\text{there exists a path from \ensuremath{u} to \ensuremath{v} and from \ensuremath{v} to \ensuremath{u} \}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+גרף הרכיבים הקשירים היטב
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף מכוון.
+ גרף הרכיבים הקשירים היטב של 
+\begin_inset Formula $G$
+\end_inset
+
+ הוא גרף מכוון שמסומן
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G^{SCC}=(V^{SCC},E^{SCC})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+מוגדר:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+V^{SCC} & =\{U\subseteq V|\text{U is strongly connected \}}\\
+E^{SCC} & =\{U\rightarrow U'|\text{there exists an edge \ensuremath{u\rightarrow u',}where \ensuremath{u\in U} and \ensuremath{u'\in U'} \}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+טענה
+\end_layout
+
+\begin_layout Standard
+לכל גרף מכוון 
+\begin_inset Formula $G$
+\end_inset
+
+ הגרף 
+\begin_inset Formula $G^{SCC}$
+\end_inset
+
+ חסר מעגלים.
+\end_layout
+
+\begin_layout Subsubsection
+טענה מההרצאה
+\end_layout
+
+\begin_layout Standard
+קיים אלגוריתם שמקבל גרף מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ ומחזיר את 
+\begin_inset Formula $G^{SCC}$
+\end_inset
+
+ בזמן 
+\begin_inset Formula $O(|V|+|E|)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+תרגיל
+\end_layout
+
+\begin_layout Standard
+יהיא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף מכוון ויהא 
+\begin_inset Formula $V$
+\end_inset
+
+ רכיב קשיר היטב.
+ הוכיחו כי בכל ריצת 
+\begin_inset Formula $DFS$
+\end_inset
+
+ על 
+\begin_inset Formula $G$
+\end_inset
+
+ כל צמתי 
+\begin_inset Formula $V$
+\end_inset
+
+ נמצאים באותו עץ 
+\begin_inset Formula $DFS$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+פתרון 
+\end_layout
+
+\begin_layout Standard
+בתרגול הבא.
+\end_layout
+
+\end_body
+\end_document

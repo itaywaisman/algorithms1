@@ -1,0 +1,1346 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+fixltx2e
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Section
+תזכורת - מסלולים קלים ביותר
+\end_layout
+
+\begin_layout Standard
+נתון לנו גרף מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ ופונקציית משקל 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ נתון לנו צומת 
+\begin_inset Formula $s\in V$
+\end_inset
+
+ שממנו נתחיל לחפש.
+\end_layout
+
+\begin_layout Standard
+המטרה היא למצוא לכל צומת 
+\begin_inset Formula $u\in V$
+\end_inset
+
+את המסלול הקל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ל-
+\begin_inset Formula $u$
+\end_inset
+
+.
+ )אורך מסלול 
+\begin_inset Formula $P$
+\end_inset
+
+ הוא סך משקלי השקתות ב-
+\begin_inset Formula $P$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Definition
+נגדיר את 
+\begin_inset Formula $\delta(u,v)$
+\end_inset
+
+ להיות אורך המסלול הקל ביותר מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\delta(u,v)=\begin{cases}
+\infty & \text{no path from u to v exists}\\
+-\infty & \text{there exists a negative circle from u and v is in the circle}\\
+min\left\{ w(P):\text{P is a path from u to v}\right\}  & \text{else}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim*
+אם 
+\begin_inset Formula $P$
+\end_inset
+
+מסלול קל ביותר מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ אזי כל תת מסלול של 
+\begin_inset Formula $P$
+\end_inset
+
+ גם הוא קל ביותר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim*
+
+\series bold
+אי שוויון המשולש
+\series default
+ - )בהנחה שאין מעגלים שליליים ב-
+\begin_inset Formula $G$
+\end_inset
+
+( לכל קשת מכוונת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $\delta(s,v)\le\delta(s,u)+w(u\rightarrow v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+אם אין מסלול בין 
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ אזי 
+\begin_inset Formula $\delta(s,u)=\infty$
+\end_inset
+
+ ואי השוויון מתקיים.
+\begin_inset Newline newline
+\end_inset
+
+אחרת, נניח שיש מסלול מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ ב-
+\begin_inset Formula $G$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\delta(s,u)$
+\end_inset
+
+ סופי.
+ נשרשר למסלול הקל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ את הקשת 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+.
+ אורך המסלול הזה שווה ל- 
+\begin_inset Formula $\delta(s,u)+w(u,v)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\delta(s,v)$
+\end_inset
+
+ זה אורך המסול הקל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ וראינו שיש מסלול מסוים מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ שאורכו: 
+\begin_inset Formula $\delta(s,u)+w(u\rightarrow v)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+פיתוח אלגוריתם מהטענות
+\end_layout
+
+\begin_layout Standard
+הרעיון: לבדוק הפרות של אי-שוויון המשלולש ולתקן כל עוד יש הפרה.
+\end_layout
+
+\begin_layout Subsubsection
+השיטה הגנרית: 
+\end_layout
+
+\begin_layout Algorithm
+
+\numeric on
+1
+\numeric off
+.
+ אתחול: 
+\begin_inset Formula $d(s)\leftarrow0$
+\end_inset
+
+, לכל 
+\begin_inset Formula $u\ne s$
+\end_inset
+
+: 
+\begin_inset Formula $d[u]\leftarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+
+\numeric on
+2
+\numeric off
+.
+ כל עוד קיימת קשת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula $d(v)>d(u)+w(u,v)$
+\end_inset
+
+ נבצע: 
+\begin_inset Formula $d(v)\leftarrow d(u)+w(u,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+אם אין מעגלים שליליים בגרף 
+\begin_inset Formula $G$
+\end_inset
+
+ אז:
+\end_layout
+
+\begin_layout Theorem
+א.
+ לכל צומת 
+\begin_inset Formula $u\in V$
+\end_inset
+
+ ולכל שלב של השיטה הגנרית: 
+\begin_inset Formula $d(u)\ge\delta(s,u)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+ב.
+ לכל צומת 
+\begin_inset Formula $u\in V$
+\end_inset
+
+, כשהשיטה הגנרית עוצרת אז 
+\begin_inset Formula $d(u)=\delta(s,u)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נתחיל מהוכחת סעיף א באינדוקציה על צעדי השיטה הגנרית.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+בסיס
+\bar default
+: בשלב
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, כלומר באתחול, מתקיים: 
+\begin_inset Formula $d(s)=0$
+\end_inset
+
+, אבל אין לנו מעגלים שליליים ב-
+\begin_inset Formula $G$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\delta(s,s)=0$
+\end_inset
+
+.
+ עבור צומת 
+\begin_inset Formula $u\ne s$
+\end_inset
+
+: מתקיים 
+\begin_inset Formula $\delta(s,u)\le d(u)=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+צעד
+\bar default
+: תהי 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+ הקשת עבורה ביצענו עדכון באיטרציה הנוכחית.
+ נראה שאחרי העדכון 
+\begin_inset Formula $d(v)$
+\end_inset
+
+ עדיין יתקיים 
+\begin_inset Formula $d(v)\ge\delta(s,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+העדכון מבצע: 
+\begin_inset Formula $d(v)=d(u)+w(u,v)$
+\end_inset
+
+ מהנחת האינדקוציה עבור 
+\begin_inset Formula $u$
+\end_inset
+
+, מתקיים 
+\begin_inset Formula $d(u)+w(u,v)\ge\delta(s,u)+w(u,v)$
+\end_inset
+
+ ומאי שוויון מהשולש 
+\begin_inset Formula $\delta(s,u)+w(u,v)\ge\delta(s,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח את סעיף ב.
+\end_layout
+
+\begin_layout Proof
+בהינתן סעיף א, מספיק שנראה שכשהשיטה הגנרית עוצרת מתקיים: 
+\begin_inset Formula $d(v)\le\delta(s,v)$
+\end_inset
+
+.
+ נניח בשלילה שקיים צומת )בסיום האלגוריתם( כך ש: 
+\begin_inset Formula $d(v)>\delta(s,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $p$
+\end_inset
+
+ מסלול קל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p=s=v_{0}\rightarrow v_{1}\rightarrow v_{2}\rightarrow\cdots\rightarrow v_{k-1}\rightarrow v_{k}=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+עבור 
+\begin_inset Formula $v_{0}=s$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $d(v)=\delta(s,s)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+עבור 
+\begin_inset Formula $v_{k}=v$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $d(v)>\delta(s,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נסתכל על הפעם הראשונה ב-
+\begin_inset Formula $p$
+\end_inset
+
+ בה השיטה הגנרית 
+\begin_inset Quotes eld
+\end_inset
+
+מפספסת כלפי מעלה
+\begin_inset Quotes erd
+\end_inset
+
+ כלומר: 
+\begin_inset Formula $d(v_{i-1})=\delta(s,v_{i-1})$
+\end_inset
+
+ וגם 
+\begin_inset Formula $d(v_{i})<\delta(s,v_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לפי טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתקיים 
+\begin_inset Formula 
+\[
+d(v_{i})>\delta(s,v_{i})=\delta(s,v_{i-1})+w(v_{i-1},v_{i})=d(v_{i-1})+w(v_{i-1},v_{i})
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+וזו סתירה לכך שהשיטה הגנרית עצרה.
+\end_layout
+
+\begin_layout Subsection
+איך ניתן למצוא מסלול קל ביותר ולא רק את האורך של המסלול הקל ביותר?
+\end_layout
+
+\begin_layout Standard
+נשנה את השיטה כך שלכל צומת 
+\begin_inset Formula $u$
+\end_inset
+
+ נוסיף לשיטה הגנרית 
+\begin_inset Formula $\pi[u]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+
+\series bold
+\numeric on
+1
+\series default
+\numeric off
+.
+ באתחול נוסיף: 
+\begin_inset Formula $\pi[u]\leftarrow NULL$
+\end_inset
+
+ לכל צומת 
+\begin_inset Formula $u\in V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+
+\numeric on
+2
+\numeric off
+.
+ בעדכון של קשת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+: 
+\begin_inset Formula $\pi(v)\leftarrow u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+מבנה מסלולים קלים ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+עץ מסלולים קלים ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ עבור גרף 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ הוא תת גרף 
+\begin_inset Formula $G'=(V',E')$
+\end_inset
+
+ כך ש:
+\end_layout
+
+\begin_layout Definition
+
+\numeric on
+1
+\numeric off
+.
+ 
+\begin_inset Formula $V'$
+\end_inset
+
+ זהו אוסף הצמתים הישגים מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+
+\numeric on
+2
+\numeric off
+.
+ 
+\begin_inset Formula $G'$
+\end_inset
+
+ הוא עץ מכוון שהשורש שלו הוא 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+
+\numeric on
+3
+\numeric off
+.
+ לכל צומת 
+\begin_inset Formula $u$
+\end_inset
+
+ ב-
+\begin_inset Formula $V'$
+\end_inset
+
+ מתקיים שהמסלול היחיד מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ ב-
+\begin_inset Formula $G'$
+\end_inset
+
+ הוא מסלול קל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+בהנחה שאין מעגלים שליליים ב-
+\begin_inset Formula $G$
+\end_inset
+
+ אז כשהשיטה הגנרית עוצרת, אזי הגרף הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל: 
+\begin_inset Formula 
+\begin{align*}
+G' & =\left\{ V',E'\right\} \\
+ & V'\triangleq\{u:\pi(u)\ne NUL\}\cup\{s\}\\
+ & E'\triangleq\{(u,v):\pi(v)=u\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+הוא עץ מסלולים קלים ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+א.
+ בכל שלב של הריצה בשיטה הגנרית 
+\begin_inset Formula $G'$
+\end_inset
+
+ לא מכיל מעגלים מכוונים.
+ 
+\end_layout
+
+\begin_layout Proof
+ב.
+ צריך להוכיח גם כי בסיום הריצה של השיטה הגנרית 
+\begin_inset Formula $V'$
+\end_inset
+
+זה אוסף כל הצמתים הישיגים מ-
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+ג.
+ בסיום הריצה של השיטה הגנרית לכל צומת 
+\begin_inset Formula $u\in V'$
+\end_inset
+
+, המסלול )היחיד( מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ ב-
+\begin_inset Formula $G'$
+\end_inset
+
+ הוא מסלול קל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+כיצד ניתן לחלץ מהשיטה הגנרית אלגוריתמים מהירים?
+\end_layout
+
+\begin_layout Standard
+בהנחה שכל מהשקלים הם אי שליליים, כלומר 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+האלגוריתם של
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\end_layout
+
+\begin_layout Algorithm
+
+\numeric on
+1
+\numeric off
+.
+ אתחול: 
+\begin_inset Formula $d(s)\leftarrow0$
+\end_inset
+
+, ולכל 
+\begin_inset Formula $u\ne s$
+\end_inset
+
+: 
+\begin_inset Formula $d(u)\leftarrow\infty$
+\end_inset
+
+ ונאתחל 
+\begin_inset Formula $Q\leftarrow V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+
+\numeric on
+2
+\numeric off
+.
+ כל עוד 
+\begin_inset Formula $Q\ne\emptyset$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Algorithm
+א.
+ יהיה 
+\begin_inset Formula $u$
+\end_inset
+
+הצומת ב- 
+\begin_inset Formula $Q$
+\end_inset
+
+ בעל 
+\begin_inset Formula $d(u)$
+\end_inset
+
+ קטן ביותר.
+\end_layout
+
+\begin_layout Algorithm
+ב.
+ לכל קשת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+ אם: 
+\begin_inset Formula $d(v)>d(u)+w(u,v)$
+\end_inset
+
+ אז: מוציאים את 
+\begin_inset Formula $u$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+זמן ריצה: בדומה ל-
+\lang english
+Prim
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם נשתמש בערימה האלגוריתם רץ בזמן 
+\begin_inset Formula $O(Elog(V))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+הוכחת נכונות
+\end_layout
+
+\begin_layout Standard
+מספיק להראות, מנכונות השיטה הגנרית, כשכשהאגלוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עוצר כל קשת 
+\begin_inset Formula $(u,v)$
+\end_inset
+
+ מקיימת: 
+\begin_inset Formula $d(v)\le d(u)+w(u,v)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+נניח ש-
+\begin_inset Formula $v$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+ באיטרציה עוקבת שבה 
+\begin_inset Formula $u$
+\end_inset
+
+ הוציא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+אזי: 
+\begin_inset Formula $d(u)\le d(v)$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $d(u)$
+\end_inset
+
+ זה ברגע הוצאת 
+\begin_inset Formula $u$
+\end_inset
+
+, ו-
+\begin_inset Formula $d(v)$
+\end_inset
+
+זה ברגע הוצאת 
+\begin_inset Formula $v$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Proof
+במהלך האיטרציה הזאת, אם 
+\begin_inset Formula $d(v)$
+\end_inset
+
+ קטן, אז יש קשת 
+\begin_inset Formula $(u\rightarrow v)$
+\end_inset
+
+ וביצענו עדכון 
+\begin_inset Formula $d(v)\leftarrow d(u)+w(u\rightarrow v)$
+\end_inset
+
+ ועדיין התנאי 
+\begin_inset Formula $d(u)\le d(v)$
+\end_inset
+
+.
+ אם לא ביצענו עדכון עדיין אז התנאי מתקיים באופן טריוואלי.
+\end_layout
+
+\begin_layout Corollary
+הטענה מתקיימת גם אם 
+\begin_inset Formula $v$
+\end_inset
+
+ יוצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+ מס' כלשהו של איטרציות אחרי מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+לכל צומת 
+\begin_inset Formula $u\in V$
+\end_inset
+
+, 
+\begin_inset Formula $d(u)$
+\end_inset
+
+ לא מתעדכן אחרי הוצאת 
+\begin_inset Formula $u$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שקיים צומת 
+\begin_inset Formula $v$
+\end_inset
+
+ כך ש: 
+\begin_inset Formula $d(v)$
+\end_inset
+
+ עודכן אחרי ש-
+\begin_inset Formula $v$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ נסתכל על הפעם הראשונה שבה 
+\begin_inset Formula $d(v)$
+\end_inset
+
+ עודכן לאחר הוצאת 
+\begin_inset Formula $v$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נניח באיטרציה הזו 
+\begin_inset Formula $u$
+\end_inset
+
+ הוצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+ והייתה קיימת קשת מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $d(v)>d(u)+w(u,v)$
+\end_inset
+
+ )
+\begin_inset Formula $u$
+\end_inset
+
+ יוצא אחרי 
+\begin_inset Formula $v$
+\end_inset
+
+ אך משקלו קטן מזה של 
+\begin_inset Formula $v$
+\end_inset
+
+( זו סתירה למסקנה הראשונה כי 
+\begin_inset Formula $w(u\rightarrow v)\ge0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+טענה זו היא בדיוק מה שאנחנו רוצים להוכיח כי למעשה ממנה נובע שבסיום האלגוריתם
+ לכל קשת 
+\begin_inset Formula $(u,v)\in E$
+\end_inset
+
+ יתקיים: 
+\begin_inset Formula $d(v)\le d(u)+w(u,v)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

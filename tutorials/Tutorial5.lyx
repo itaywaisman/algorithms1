@@ -1,0 +1,977 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+fixltx2e
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "FrankRuehl"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תרגול
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Section
+עץ פורש מינימאלי -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Minimum Spanning Tree
+\end_layout
+
+\begin_layout Subsection
+תכונות עץ פורש )לאו דווקא מינימאלי(
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ גרף לא מכוון וקשיר, ויהא 
+\begin_inset Formula $T=(V,F)$
+\end_inset
+
+ עץ פורש של 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+אם נוסיף ל-
+\begin_inset Formula $T$
+\end_inset
+
+ קשת כלשהי 
+\begin_inset Formula $e\in E\backslash F$
+\end_inset
+
+ נקבל ב-
+\begin_inset Formula $T$
+\end_inset
+
+ מעגל יחיד 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ אם נסיר מ-
+\begin_inset Formula $c$
+\end_inset
+
+ קשת כלשהי נקבל עץ פורש 
+\begin_inset Formula $T'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+אם נסיר מ-
+\begin_inset Formula $T$
+\end_inset
+
+ קשת כלשהי נקבל בדיוק
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+רכיבי קשירות.
+ אם נוסיף קשת כלשהי שמחברת בין שני הרכיבים, נקבל עץ פורש 
+\begin_inset Formula $T'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+מציאת עפ
+\begin_inset Quotes erd
+\end_inset
+
+מ או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+MST
+\end_layout
+
+\begin_layout Standard
+תזכורת: מציאת עץ פורש, ניתן לעשות על ידי הרצת 
+\begin_inset Formula $DFS$
+\end_inset
+
+ על הגרף.
+ אך אנו רוצים למצוא את העץ הפורש בעל המשקל המינימאלי.
+\end_layout
+
+\begin_layout Standard
+נתון לנו גרף לא מכוון וקשיר 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ ונתונה פונקציית משקל: 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ יש למצוא עץ פורש של 
+\begin_inset Formula $G$
+\end_inset
+
+ שסכום משקל הקשתות שלו מינימלי.
+\end_layout
+
+\begin_layout Subsubsection
+אלגוריתם
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- מציאת עץ פורש
+\end_layout
+
+\begin_layout Standard
+התחלת מ-
+\begin_inset Formula $s\in V$
+\end_inset
+
+ כלשהו.
+ כל עוד לא עץ פורש, הוסף קשת מצומת בעץ לצומת שלא בעץ.
+\end_layout
+
+\begin_layout Subsubsection
+אלגוריתם
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- מציאת עץ פורש
+\end_layout
+
+\begin_layout Standard
+התחל מגרף חסר קשתות.
+ כל עוד לא עץ פורש, הוסף קשת מגרף הקלט בין שני רכיבי קשירות שונים.
+\end_layout
+
+\begin_layout Subsubsection
+אלגוריתם
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- מציאת עץ פורש במשקל מינימאלי )
+\lang english
+Prim
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Standard
+כמו האלגוריתם המקורי, אחד בחירת הקשת היא הקשת במשקל מינימאלי.
+\end_layout
+
+\begin_layout Standard
+זמן ריצה 
+\begin_inset Formula $O(|E|\cdot log(|V|))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+אלגוריתם
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- מציאת עץ פורש במשקל מנימאלי )
+\lang english
+Kruskal
+\lang hebrew
+(
+\end_layout
+
+\begin_layout Standard
+כמו האלגוריתם המקורי, רק כעת בחירת הקשת היא הקשת במשקל מינמאלי.
+\end_layout
+
+\begin_layout Standard
+זמן ריצה 
+\begin_inset Formula $O(|E|\cdot log(|V|))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+הערות
+\end_layout
+
+\begin_layout Standard
+למעשה, פשוט הוספנו לשני האלגוריתמים הגבלה על בחירת הקשת, 
+\begin_inset Quotes eld
+\end_inset
+
+התאמנו
+\begin_inset Quotes erd
+\end_inset
+
+ את האלגוריתם הכללי למטרה שאנו צריכים.
+ האלגוריתמים האלה נקראים 
+\begin_inset Quotes eld
+\end_inset
+
+אלגוריתמיים חמדניים
+\begin_inset Quotes erd
+\end_inset
+
+ או
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Greedy
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Subsubsection
+מימוש אלגוריתם
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Kruskal
+\end_layout
+
+\begin_layout Algorithm
+\begin_inset Formula $F\leftarrow\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm
+מיין את הקשתות לפי משקלן בסדר עולה.
+ יהא 
+\begin_inset Formula $e_{1},e_{2},...,e_{n}$
+\end_inset
+
+ המיון המתקבל.
+\end_layout
+
+\begin_layout Algorithm
+לכל 
+\begin_inset Formula $i$
+\end_inset
+
+ מ-
+\begin_inset Formula $1$
+\end_inset
+
+ ועד 
+\begin_inset Formula $n$
+\end_inset
+
+: אם 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ מחברת בין שני רכיבי קשירות שונים בגרף: 
+\begin_inset Formula $F\leftarrow F\cup\{e_{i}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm
+החזר את 
+\begin_inset Formula $T=(V,F)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+תרגיל
+\end_layout
+
+\begin_layout Standard
+נתונים: גרף לא מכוון וקשיר 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+, ופונקציית משקל 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+, וקבוצת הקשתות 
+\begin_inset Formula $Y\subseteq E$
+\end_inset
+
+ )
+\begin_inset Quotes erd
+\end_inset
+
+קשתות צהובות
+\begin_inset Quotes erd
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Standard
+יש למצוא עפ
+\begin_inset Quotes erd
+\end_inset
+
+מ של 
+\begin_inset Formula $G$
+\end_inset
+
+ שמכיל מספר מקסימלי של קשתות ב-
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הרעיון: נשנה את פונקציית המשקל על מנת שהאלגוריתם שכבר הצגנו 
+\begin_inset Quotes eld
+\end_inset
+
+יעדיף
+\begin_inset Quotes erd
+\end_inset
+
+ את הקשתות מ-
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+פתרון
+\end_layout
+
+\begin_layout Standard
+נשתמש באלגוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Kruskal
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אך כאשר יש לנו קשתות מאותו משקל, בשלב המיון נמקם את הצהובות לפני הקשתות
+ הלא הצהובות.
+\end_layout
+
+\begin_layout Standard
+זמן ריצה 
+\begin_inset Formula $O(|E|\cdot log(|V|))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+הוכחת נכונות לאלגוריתם חמדן - הוכחה גנרית שנציג על התרגיל הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל
+\end_layout
+
+\begin_layout Standard
+נוכיח שלכל 
+\begin_inset Formula $i$
+\end_inset
+
+ קיים פתרון אופטימלי )במקרה שלנו - עץ פורש במשקל מינימאלי עם כמה שיותר צמתים
+ מ-
+\begin_inset Formula $Y$
+\end_inset
+
+(, שמסכים עם 
+\begin_inset Formula $i$
+\end_inset
+
+ הבחירות הראשונות של האלגוריתם.
+\end_layout
+
+\begin_layout Standard
+נוכיח באינדוקציה.
+\end_layout
+
+\begin_layout Enumerate
+בסיס: עבור 
+\begin_inset Formula $i=0$
+\end_inset
+
+, כל פתרון אופטימלי מקיים את הנדרש.
+\end_layout
+
+\begin_layout Enumerate
+צעד: יהא 
+\begin_inset Formula $Opt$
+\end_inset
+
+ פתרון אופטימלי שמסכים עם 
+\begin_inset Formula $i$
+\end_inset
+
+ הבחירות הראשונות.
+ יש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ אפשרויות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula $OPT$
+\end_inset
+
+ מסכים עם הבחירה ה-
+\begin_inset Formula $i+1$
+\end_inset
+
+ אז סיימנו.
+\end_layout
+
+\begin_layout Enumerate
+אחרת 
+\begin_inset Formula $OPT$
+\end_inset
+
+ לא מסכים עם הבחירה ה-
+\begin_inset Formula $i+1$
+\end_inset
+
+, נבצע שינוי ב-
+\begin_inset Formula $OPT$
+\end_inset
+
+ כך שנקבל פתרון 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ שהוא אופטמלי שכן מסכים עם 
+\begin_inset Formula $i+1$
+\end_inset
+
+ הבחירות הראשונות.
+\begin_inset Newline newline
+\end_inset
+
+אצלנו - השינוי יהיה הוספת קשת אחרת )ומהתכונות נקבל מעגל בגרף שלנו( ולאחר
+ מכן נסיר קשת על מנת לקבל פתרון אופטימלי כנדרש.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+לבסוף אחרי האינדוקציה נקבל בצעד האחרון כי קיבלנו פתרון אופטימלי לכל הצמתים.
+\end_layout
+
+\end_body
+\end_document

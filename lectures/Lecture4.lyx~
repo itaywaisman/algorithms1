@@ -1,0 +1,1070 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+fixltx2e
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "FrankRuehl"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Section
+בעיות אופטימזציה ורשתות
+\end_layout
+
+\begin_layout Subsection
+דוגמה
+\end_layout
+
+\begin_layout Standard
+נתונה לנו רשת התקשורת הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename network.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נניח כי הצומת 
+\begin_inset Formula $a$
+\end_inset
+
+ מעוניין להפיץ הודעה לכל הצמתים האחרים במחיר מינימלי.
+ 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+יש למצוא תח
+\begin_inset Quotes erd
+\end_inset
+
+ק של קשתות ברשת שעליהן ההודעה תעבור כך שתגיע לכל הצמתים.
+\end_layout
+
+\begin_layout Standard
+היות ונרצה להשיג מחיר מינימלי, לבטח הגרף שיתקבל מבחירת הקשתות יהיה חסר מעגלים.
+\end_layout
+
+\begin_layout Subsection
+בעיית עץ פורש מינימום
+\end_layout
+
+\begin_layout Standard
+נתוך גרף קשיר לא מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ שבו לכל קשת 
+\begin_inset Formula $(v,u)$
+\end_inset
+
+ יש משקל 
+\begin_inset Formula $\omega(v,u)$
+\end_inset
+
+.
+ יש למצוא עץ פורש של הגרף שסה
+\begin_inset Quotes erd
+\end_inset
+
+כ משקל הקשתות בו מינימלי.
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם חמדן לפתרון הבעיה
+\end_layout
+
+\begin_layout Standard
+נגדיר תחילה אלגוריתם גנרי.
+\end_layout
+
+\begin_layout Subsubsection
+רעיון
+\end_layout
+
+\begin_layout Standard
+נבנה קשת אחר קשת, על ידי הוספת הקשתות עם משקל נמוך והשמתת הקשתות עם משקל
+ גבוה.
+ האלגוריתם יתקדם על ידי 
+\bar under
+צביעת קשתות
+\bar default
+ כך שקשתות שיצבעו בכחול יופיעו בעץ וקשתות שייצבעו באדום יושמטו.
+\end_layout
+
+\begin_layout Standard
+האלגוריתם יקיים בכל שלב את 
+\bar under
+שמורת הצבע:
+\bar default
+ קיים עץ פורש מינימלי שמכיל את כל הקשתות הכחולות ואף אחת מהקשתות האדומות.
+\end_layout
+
+\begin_layout Standard
+משמורת הצבעת נובע כי כאשר כל הקשתות ב-
+\begin_inset Formula $G$
+\end_inset
+
+ נצבעות הכחולות יוצרות עץ פורש מינימלי.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+מושג מרכזי בתיאור האלגוריתם:
+\series default
+ חתך )
+\lang english
+cut
+\lang hebrew
+( בגרף 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ הינו חלוקה של קבוצות הצמתים לשתי תתי קבוצות 
+\begin_inset Formula $X$
+\end_inset
+
+ ו-
+\begin_inset Formula $\overline{X}=V/X$
+\end_inset
+
+.
+ קשת 
+\bar under
+חוצה
+\bar default
+ את החתך אם קצה אחד שלה ב-
+\begin_inset Formula $X$
+\end_inset
+
+ והקצה האחר ב-
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+למשל בדוגמה שלנו נגדיר חתך 
+\begin_inset Formula $X=\{a,b,c\}$
+\end_inset
+
+ וכן 
+\begin_inset Formula $\overline{X}=\{e,d\}$
+\end_inset
+
+.
+ הקשתות החוצות הן הקשתות 
+\begin_inset Formula $(a,e),(a,d),(b,e),(b,d),(c,d)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לפעמים נתייחס לחתך כאל קבוצת הקשתות החוצות.
+\end_layout
+
+\begin_layout Section
+האלגוריתם - גנרי למציאת עפ
+\begin_inset Quotes erd
+\end_inset
+
+מ
+\end_layout
+
+\begin_layout Algorithm
+
+\bar under
+הכלל הכחול:
+\bar default
+ מצא חתך שאין בו קשת כחולה.
+ צבע בכחול את הקשת הקלה ביותר שאינה צבועה.
+\end_layout
+
+\begin_layout Algorithm
+
+\bar under
+הכלל האדום:
+\bar default
+ מצא מעגל שאין בו אף קשת אדומה.
+ צבע באדום את הקשת הכבדה ביותר שאינה צבועה.
+\end_layout
+
+\begin_layout Algorithm
+
+\bar under
+אלגוריתם חמדן:
+\bar default
+ הפעל את הכללים לעיל עד שכל הקשתות צבועות.
+ הקשתות הכחולות הן עץ פורש מינימלי.
+\end_layout
+
+\begin_layout Subsection
+
+\series bold
+\bar under
+משפט
+\family roman
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+:
+\series default
+\bar default
+ האלגוריתם הגנרי צובע את כל הקשתות של גרף קשיר 
+\begin_inset Formula $G$
+\end_inset
+
+ ומקיים את 
+\begin_inset Quotes eld
+\end_inset
+
+שמורת הצבע
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+הוכחה:
+\series default
+\bar default
+ 
+\end_layout
+
+\begin_layout Enumerate
+נראה תחילה כי האלג' מקיים את השמורה באינדוקציה על מס' האיטרציות )דהיינו,
+ הפעלות של הכלל הכחול או האדום(.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\bar under
+בסיס: 
+\bar default
+בתחילה אף קשת לא צבועה לכן כל עץ פורש מינימלי מקיים את השמורה באופן ריק.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+צעד:
+\bar default
+ נטפל לכוד ב-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מקרים.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נניח כי השמורה מתקיימת לפני הפעלה של הכלל הכחול.
+ תהי 
+\begin_inset Formula $e$
+\end_inset
+
+ הקשת שנצבעת כעת בכחול ויהי 
+\begin_inset Formula $T$
+\end_inset
+
+ עץ פורש מינימלי שמקיים את השמורה לפני הפעלת הכלל הכחול על 
+\begin_inset Formula $e$
+\end_inset
+
+.
+ בהפרדה למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ שייכת לעץ 
+\begin_inset Formula $T$
+\end_inset
+
+, אזי העץ 
+\begin_inset Formula $T$
+\end_inset
+
+ מקיים את השמורה אחרי שהקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ נצבעת בכחול.
+\end_layout
+
+\begin_layout Enumerate
+אם הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ אינה שייכת לעץ 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ נסתכל על החתך 
+\begin_inset Formula $X$
+\end_inset
+
+ ו-
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ עליו הפעלנו את הכלל הכחול.
+ קיים בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+ מסלול שמחבר בין הצמתים 
+\begin_inset Formula $u,v$
+\end_inset
+
+ שהם הקצוות של הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+.
+ היות ו
+\begin_inset Formula $e$
+\end_inset
+
+ היא קשת חוצה בחתך, קיימת על המסלול הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל בין 
+\begin_inset Formula $v$
+\end_inset
+
+ ל-
+\begin_inset Formula $u$
+\end_inset
+
+ קשת 
+\begin_inset Formula $e'$
+\end_inset
+
+ שחוצה את החתך.
+ מהנחת האינדוקציה, לבטח אין ב-
+\begin_inset Formula $T$
+\end_inset
+
+ קשת אדומה.
+ לכן 
+\begin_inset Formula $e'$
+\end_inset
+
+ לא צבועה באדום.
+ מהכלל הכחול נובע גם כי 
+\begin_inset Formula $e'$
+\end_inset
+
+ לא צבועה בכחול, שכן היא נמצאת בחתך שנבחר כך שאין בו קשתות כחולות.
+ ולכן הקשת 
+\begin_inset Formula $\text{e'}$
+\end_inset
+
+אינה צבועה.
+\begin_inset Newline newline
+\end_inset
+
+מעבר לזאת, בגלל הכלל הכחול אנו יודעים כי 
+\begin_inset Formula $\omega(e)<\omega(e')$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+בשל כך, ניתן להשמיט מהעץ 
+\begin_inset Formula $T$
+\end_inset
+
+ את 
+\begin_inset Formula $e'$
+\end_inset
+
+ ולהוסיף את 
+\begin_inset Formula $e$
+\end_inset
+
+.
+ נשים לב כי אם המסלול היחיד בין שני צמתים בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+ עבר קודם דרך 
+\begin_inset Formula $e'$
+\end_inset
+
+, אזי כעת הוא יעבור דרך 
+\begin_inset Formula $e$
+\end_inset
+
+.
+ על ידי שינוי זה יצרנו עץ 
+\begin_inset Formula $T'$
+\end_inset
+
+ המכיל רק קשתות כחולות ולא אדומות, מכיל את 
+\begin_inset Formula $e$
+\end_inset
+
+ והוא מינימלי כי מהשינוי המשקל לא עלה.
+ לכן 
+\begin_inset Formula $T'$
+\end_inset
+
+ מקיים את שמורת הצבע.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+נניח כי השמורה מתקיימת לפני הפעלה של הכלל 
+\bar under
+האדום.
+
+\bar default
+ תהי 
+\begin_inset Formula $e$
+\end_inset
+
+ קשת שנצבעת כעת באדום, ויהי 
+\begin_inset Formula $T$
+\end_inset
+
+ עץ פורש מינימלי שמקיים את השמורה לפני שהקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ נצבעת.
+ נפריד לתתי מקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ לא היתה בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+, אזי עדיין 
+\begin_inset Formula $T$
+\end_inset
+
+ מקיים את השמורה.
+\end_layout
+
+\begin_layout Enumerate
+אם הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ נמצאת בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ השמטת הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ מהעץ 
+\begin_inset Formula $T$
+\end_inset
+
+ מחלקת את 
+\begin_inset Formula $T$
+\end_inset
+
+ לשני עצים ומגדירה חלוקה של הצמתים ב-
+\begin_inset Formula $G$
+\end_inset
+
+.
+ נסתכל על המעגל שעליו הפעלנו את הכלל האדום.
+ נשים לב כי בהכרח קיימת קשת 
+\begin_inset Formula $e'$
+\end_inset
+
+ על המעגל שמחברת בין רכיבי הקשירות שנוצרו לאחר הסרת 
+\begin_inset Formula $e$
+\end_inset
+
+.
+ המעגל הזה למעשה מכיל מסלול נוסף בין הקצוות של הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ שנסמנם 
+\begin_inset Formula $u,v$
+\end_inset
+
+, מסלול זה מכיל קשת 
+\begin_inset Formula $e'$
+\end_inset
+
+ אשר קצה אחד שלה ב-
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ וקצה שני ב-
+\begin_inset Formula $T_{2}$
+\end_inset
+
+.
+ נשים לב כי לא ייתכן ש-
+\begin_inset Formula $e'$
+\end_inset
+
+ צבועה באדום בגלל שכך פעל הכלל האדום )בחר מעגל שאין בו קשתות אדומות(.
+ בנוסף 
+\begin_inset Formula $e'$
+\end_inset
+
+ לא צבועה בכחול כי אחרת הייתה בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+ המקורי ואז הוא לא היה עץ )היה מעגל בעץ(.
+ לכן הקשת 
+\begin_inset Formula $e'$
+\end_inset
+
+ אינה צבועה.
+ בנוסף, מתקיים מהכלל האדום בוודאות 
+\begin_inset Formula $\omega(e')\le\omega(e)$
+\end_inset
+
+ שכן בחרנו את 
+\begin_inset Formula $e$
+\end_inset
+
+ להיות הקשת הכבדה במעגל.
+ הוספת הקשת 
+\begin_inset Formula $e'$
+\end_inset
+
+ והשמטת הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ ייצור עץ חדש 
+\begin_inset Formula $T'$
+\end_inset
+
+ המקיים את שמורת הצבע ומשקלו לא גדול יותר ממשקל העץ המקורי 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+נראה כי האלגוריתם צובע את כל הקשתות בגרף.
+ נניח בשלילה כי יש קשת 
+\begin_inset Formula $e$
+\end_inset
+
+ לא צבועה אבל אי אפשר להפעיל אף אחד מהכללים, דהיינו האלגוריתם נתקע.
+ מהכלל הכחול הקשתות הכחולות יוצרות יער שמורכב מעצים כחולים.
+ נבחין בין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ מקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם שני הקצוות של 
+\begin_inset Formula $e$
+\end_inset
+
+ נמצאות באותו עץ כחול, נקבל מעגל, ולכן נוכל להפעיל את הכלל האדום, כלומר
+ מצאנו ב-
+\begin_inset Formula $G$
+\end_inset
+
+ מעגל שאין בו קשתות אדומות )כי שאר הקשתות במעגל הן כחולות(, ולכן ניתן להפעיל
+ את הכלל האדום.
+ זה בסתירה לכך שהאלגוריתם נתקע.
+\end_layout
+
+\begin_layout Enumerate
+אם הקצוות של 
+\begin_inset Formula $e$
+\end_inset
+
+ הן בעצים כחולים שונים, נסמן ב-
+\begin_inset Formula $X$
+\end_inset
+
+ את אוסף הצמתים ב-
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ וב-
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ את שאר הצמתים.
+ קיבלנו חתך שאין בו קשתות כחולות ולכן ניתן להפעיל על 
+\begin_inset Formula $e$
+\end_inset
+
+ את הכלל הכחול.
+\end_layout
+
+\begin_layout Enumerate
+סך הכל ניתן להפעיל את אחד הכללים על הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ ולכן האלגוריתם לא נתקע!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+ובזאת הוכחנו את הנדרש 
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+אלגוריתמים קלאסיים למציאת עפ
+\begin_inset Quotes erd
+\end_inset
+
+מ
+\end_layout
+
+\begin_layout Subsection
+האלגוריתם של
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Prim
+\end_layout
+
+\begin_layout Standard
+נפעיל את הכלל הכחול על החתך שמוגדר על ידי העץ שהולך ונבנה, דהיינו בין צומתי
+ העץ ובין שאר הצמתים בגרף.
+\end_layout
+
+\begin_layout Subsubsection
+האלגוריתם
+\end_layout
+
+\begin_layout Algorithm
+אתחול: כל הקשתות הלא צבועות 
+\begin_inset Formula $T=\{r\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm
+)
+\numeric on
+2
+\numeric off
+( כל עוד 
+\begin_inset Formula $T\ne V$
+\end_inset
+
+ בצע:
+\end_layout
+
+\begin_layout Algorithm
+תהי 
+\begin_inset Formula $e=(u,v)$
+\end_inset
+
+ הקשת המינימאלית בחתך 
+\begin_inset Formula $(T,V/T)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $u\in T$
+\end_inset
+
+ צבע את 
+\begin_inset Formula $e$
+\end_inset
+
+ בכחול ובצע 
+\begin_inset Formula $T=T\cup\{u\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+ניתוח זמן הריצה במימוש בעזרת מערכים
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $v$
+\end_inset
+
+ צומת שגובל בעץ הכחול 
+\begin_inset Formula $T$
+\end_inset
+
+, דהיינו יש קשת 
+\begin_inset Formula $(v,u)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $u$
+\end_inset
+
+ נמצא בעץ 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ עבור כל צומת 
+\begin_inset Formula $v$
+\end_inset
+
+ שגובל ב-
+\begin_inset Formula $T$
+\end_inset
+
+ נגדיר קשת בצבע תכלת, זוהי הקשת הקלה ביותר מבין הקשתות שמחברות את 
+\begin_inset Formula $v$
+\end_inset
+
+ ל-
+\begin_inset Formula $T$
+\end_inset
+
+.
+ )הקשתות בצבע תכלת מועמדות להפוך לכחולות(.
+ כאשר נפעיל את הכלל הכחול, נבחר קשת בצבע תכלת ונהפוך אותה לכחולה.
+ נניח כי הצומת 
+\begin_inset Formula $v$
+\end_inset
+
+ נוסף לעץ 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ נסתכל על כל הקשתות )הלא צבועות( 
+\begin_inset Formula $(v,x)$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $x\notin T$
+\end_inset
+
+.
+ אם אין ל-
+\begin_inset Formula $x$
+\end_inset
+
+ קשת תכלת, נצבע את 
+\begin_inset Formula $(v,x)$
+\end_inset
+
+ בתכלת.
+ אם יש ל-
+\begin_inset Formula $x$
+\end_inset
+
+ קשת תכלת, נקרא לה 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $y\in T$
+\end_inset
+
+ והמשקל 
+\begin_inset Formula $\omega(v,x)$
+\end_inset
+
+ קטן מהמשקל 
+\begin_inset Formula $\omega(x,y)$
+\end_inset
+
+ אזי נהפוך את 
+\begin_inset Formula $(v,x)$
+\end_inset
+
+ לתכלת במקום הקשת 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הסיבוכיות לאלגוריתם זה:
+\end_layout
+
+\begin_layout Standard
+בכל איטרציה של הכלל הכחול הסיבוכיות היא 
+\begin_inset Formula $O(|V|)$
+\end_inset
+
+ וכיוון שיהיו 
+\begin_inset Formula $|V|-1$
+\end_inset
+
+ איטרציות נקבל 
+\begin_inset Formula $O(|V|^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מבחינת סיבוכיות מקום, האלגוריתם משתמש במערך באורך 
+\begin_inset Formula $O(|V|)$
+\end_inset
+
+ בצבע תכלת.
+\end_layout
+
+\end_body
+\end_document

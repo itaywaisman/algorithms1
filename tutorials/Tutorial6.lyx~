@@ -1,0 +1,588 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams-chap-bytype
+theorems-ams-extended-chap-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תרגול
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Section
+תרגיל
+\end_layout
+
+\begin_layout Standard
+צריך למצוא עץ 
+\begin_inset Formula $MST$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+צהוב ביותר
+\begin_inset Quotes erd
+\end_inset
+
+ - כמו מהתרגול הקודם.
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם
+\end_layout
+
+\begin_layout Standard
+כמו האלגוריתם של 
+\begin_inset Formula $Kruskal$
+\end_inset
+
+, אך במיון נעדיף קשתות צהובות מאותו משקל על פני קשתות לא צהובות מאותו משקל.
+\end_layout
+
+\begin_layout Subsection
+נכונות
+\end_layout
+
+\begin_layout Standard
+נסמן: 
+\begin_inset Formula $F_{k}$
+\end_inset
+
+ - קבוצת הקשתות שהאלגוריתם בחר לקחת מבין 
+\begin_inset Formula $k$
+\end_inset
+
+ הקשתות הראשונות במיון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{F}_{k}$
+\end_inset
+
+- קבוצת הקשתות שהאלגוריתם לא לקח מבין 
+\begin_inset Formula $k$
+\end_inset
+
+ הקשתות הראשונות במיון.
+\end_layout
+
+\begin_layout Standard
+נוכיח כי לכל 
+\begin_inset Formula $k$
+\end_inset
+
+, קיים 
+\begin_inset Formula $MST$
+\end_inset
+
+ צהוב ביותר שמכיל את כל הרשתות ב-
+\begin_inset Formula $F_{k}$
+\end_inset
+
+ ולא מכיל אף קשת מ-
+\begin_inset Formula $\overline{F}_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נוכיח זאת באינדוקציה על 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+בסיס - עבור 
+\begin_inset Formula $k=0$
+\end_inset
+
+, כל פתרון אופטימלי מקיים את הדרוש.
+\end_layout
+
+\begin_layout Itemize
+צעד - נניח שקיים 
+\begin_inset Formula $MST$
+\end_inset
+
+ צהוב ביותר שנקרא לו 
+\begin_inset Formula $OPT$
+\end_inset
+
+ כך שמכיל את כל הקשתות ב-
+\begin_inset Formula $F_{k}$
+\end_inset
+
+ולא מכיל אף קשת מ-
+\begin_inset Formula $\overline{F}_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula $OPT$
+\end_inset
+
+ מסכים עם האלגוריתם על הקשת 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+ אזי 
+\begin_inset Formula $OPT$
+\end_inset
+
+ מסכים עם 
+\begin_inset Formula $F_{k+1},\overline{F}_{k+1}$
+\end_inset
+
+.
+ )הכוונה במסכים - אם 
+\begin_inset Formula $OPT$
+\end_inset
+
+ לקח את הקשת אז גם האלגוריתם לקח אותה, ואם 
+\begin_inset Formula $OPT$
+\end_inset
+
+ לא לקח אז גם האלגוריתם לא לקח(.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula $OPT$
+\end_inset
+
+ לא מסכים עם האלגוריתם על הקשת 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+.
+ נפריד למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+האלגוריתם בחר לא לקחת את 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+ - האלגוריתם לא לוקח קשת כלשהי כאשר היא לא מחברת בין רכיבי קשירות שונים
+ )כלומר נמצאת בתוך רכיב קשירות, ויוצרת מעגל(.
+ אם 
+\begin_inset Formula $OPT$
+\end_inset
+
+ לא מסכים איתנו, אזי הוא לקח את הקשת הזאת וזה לא הגיוני כי יהיה לו מעגל.
+\end_layout
+
+\begin_layout Itemize
+האלגוריתם בחר לקחת את 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+ - נוסיף ל-
+\begin_inset Formula $OPT$
+\end_inset
+
+ את הקשת 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+.
+ נקבל עץ עם עוד קשת חדשה ולכן יווצר מעגל 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ לא יכול להיות שכל הקשתות במעגל 
+\begin_inset Formula $C$
+\end_inset
+
+ הן קשתות שבחרנו, ולכן 
+\begin_inset Formula $C$
+\end_inset
+
+ מכיל לפחות קשת אחרת 
+\begin_inset Formula $e'$
+\end_inset
+
+ שלא שייכת ל-
+\begin_inset Formula $F_{k}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $e'$
+\end_inset
+
+ לא שייכת ל-
+\begin_inset Formula $\overline{F}_{k}$
+\end_inset
+
+ כי 
+\begin_inset Formula $OPT$
+\end_inset
+
+ לא מכיל אף קשת מ-
+\begin_inset Formula $\overline{F}_{k}$
+\end_inset
+
+.
+ על כן, 
+\begin_inset Formula $e'$
+\end_inset
+
+ נמצאת אחרי 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+ במיון.
+\begin_inset Newline newline
+\end_inset
+
+נסיר את 
+\begin_inset Formula $e'$
+\end_inset
+
+ מ-
+\begin_inset Formula $OPT$
+\end_inset
+
+ ונקבל עץ פורש 
+\begin_inset Formula $\tag{OPT}'$
+\end_inset
+
+.
+ בעץ זה לא פגענו במשקל העץ שכן 
+\begin_inset Formula $e_{k+1}$
+\end_inset
+
+לפני 
+\begin_inset Formula $e'$
+\end_inset
+
+ במיון, ולכן 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ הוא 
+\begin_inset Formula $MST$
+\end_inset
+
+ צהוב ביותר, שמסכים איתנו עם 
+\begin_inset Formula $F_{k+1},\overline{F}_{k+1}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+תרגיל
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+נתונים גרף לא מכוון וקשיר 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ פונקציית משקל :
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+ וקשת 
+\begin_inset Formula $e\in E$
+\end_inset
+
+.
+ יש להכריע האם קיים 
+\begin_inset Formula $MST$
+\end_inset
+
+ שמכיל את 
+\begin_inset Formula $e$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+רעיון
+\end_layout
+
+\begin_layout Standard
+נצבע את הקשת 
+\begin_inset Formula $e$
+\end_inset
+
+ בצהוב, ונמצא 
+\begin_inset Formula $MST$
+\end_inset
+
+ צהוב ביותר.
+ אם ה-
+\begin_inset Formula $MST$
+\end_inset
+
+ מכיל את 
+\begin_inset Formula $e$
+\end_inset
+
+, נחזיר 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+ ואחרת נחזיר 
+\begin_inset Quotes eld
+\end_inset
+
+לא
+\begin_inset Quotes erd
+\end_inset
+
+.
+ זמן ריצה: 
+\begin_inset Formula $O(Elog(V))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם
+\end_layout
+
+\begin_layout Standard
+הסר מהגרף את כל הקשתות שמשקלן 
+\begin_inset Formula $w(e)$
+\end_inset
+
+ או יותר.
+ יהא 
+\begin_inset Formula $G'$
+\end_inset
+
+ הגרף המתקבל.
+\end_layout
+
+\begin_layout Standard
+נסמן: 
+\begin_inset Formula $e=uv$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אם ב-
+\begin_inset Formula $G'$
+\end_inset
+
+ 
+\begin_inset Formula $u$
+\end_inset
+
+ ו-
+\begin_inset Formula $v$
+\end_inset
+
+ נמצאים ב-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+רכיבי קשירות שונים, החזר 
+\begin_inset Quotes eld
+\end_inset
+
+כן
+\begin_inset Quotes erd
+\end_inset
+
+.
+ אחרת החזר 
+\begin_inset Quotes eld
+\end_inset
+
+לא
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

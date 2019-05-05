@@ -1,0 +1,931 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{amsthm}
+\usepackage{amsmath}%
+\usepackage{wasysym}%
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Section
+המשך עץ פורש מינימום
+\end_layout
+
+\begin_layout Standard
+ראינו אלגוריתם גנרי למציאת עץ פורש מינימום בעזרת שני כללים: הכלל הכחול והכלל
+ האדום.
+\end_layout
+
+\begin_layout Standard
+הכלל הכחול - קיים חתך 
+\begin_inset Formula $(S,\overline{S})$
+\end_inset
+
+ כך שאין אף קשת כחולה החוצה אותו.
+ מבין הקשתות בחתך, בחר את הקשת בעלת המשקל המינימלי וצבע אותה בכחול.
+\end_layout
+
+\begin_layout Standard
+הכלל האדום - קיים מעגל 
+\begin_inset Formula $C$
+\end_inset
+
+ שאינו מכיל קשתות אדומות אז ניתן לצבוע באדום את הקשת הכבדה ביותר ב-
+\begin_inset Formula $C$
+\end_inset
+
+ מבין הקשתות הלא צבועות.
+\end_layout
+
+\begin_layout Standard
+השיטה הכללית: מאתחלים את כל הקשתות להיות לא צבועות.
+ כל עוד אפשר, מפעילים את אחד הכללים וצובעים קשת.
+\end_layout
+
+\begin_layout Theorem*
+השיטה הכללית לעולם לא נתקעת - כלומר בסיום האלגוריתם כל הקשתות בגרף צבועות.
+ בנוסף, אוסף הקשתות הצבועות בכחול הוא איזשהו עץ פורש מינימום.
+\end_layout
+
+\begin_layout Standard
+ההוכחה של המשפט הזה מאוד שימושית - הוכחנו למעשה כי אם נבנה אלגוריתם המשתמש
+ באחד מן הכללים באופן חוקי, הוא מידית נכון.
+\begin_inset Newline newline
+\end_inset
+
+ולכן כעת נציג את המימוש עצמו והוכחת הנכונות נגזרת מהוכחת המשפט הזה.
+\end_layout
+
+\begin_layout Subsection
+האלגוריתם של
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Prim
+\end_layout
+
+\begin_layout Standard
+נבחר צומת התחלתי 
+\begin_inset Formula $s\in V$
+\end_inset
+
+.
+ נגדיר חתך התחלתי 
+\begin_inset Formula $S=\{s\}$
+\end_inset
+
+, נבחר את הקשת הכי קלה הנוגעת ב-
+\begin_inset Formula $s$
+\end_inset
+
+ ונכניס אותה לחתך שלנו.
+ כל פעם נבחר את הקשת הקלה ביותר ונכניס אותך לחתך שלנו.
+ 
+\end_layout
+
+\begin_layout Standard
+למעשה זו הפעלה של הכלל הכחול בכל שלב ולכן הנכונות כמעט מידית.
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+1
+\numeric off
+.
+ יהי צומת 
+\begin_inset Formula $s\in V$
+\end_inset
+
+ התחלתי.
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+2
+\numeric off
+.
+ נגדיר 
+\begin_inset Formula $S\leftarrow\{s\}$
+\end_inset
+
+ וכן 
+\begin_inset Formula $T\leftarrow\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+3
+\numeric off
+.
+ כל עוד 
+\begin_inset Formula $S\ne V$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Algorithm*
+א.
+ תהי 
+\begin_inset Formula $e=(u,v)$
+\end_inset
+
+ קשת קלה ביותר שחוצה את 
+\begin_inset Formula $(S,\overline{S})$
+\end_inset
+
+ )נניח כי 
+\begin_inset Formula $u\in S$
+\end_inset
+
+ וכן 
+\begin_inset Formula $v\ne S$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Algorithm*
+ב.
+ בצע 
+\begin_inset Formula $T\leftarrow T\cup\{e\}$
+\end_inset
+
+ ובצע 
+\begin_inset Formula $S\leftarrow S\cup\{v\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+4
+\numeric off
+.
+ החזר את 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+כיצד ניתן לממש את האלגוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Prim
+\lang hebrew
+?
+\end_layout
+
+\begin_layout Standard
+נשמור את צמתי 
+\begin_inset Formula $\overline{S}$
+\end_inset
+
+ בערימת מינימום.
+ הערך )המפתח( של צומת 
+\begin_inset Formula $r$
+\end_inset
+
+ בערימה הוא משקל הקשת הקלה ביותר שנוגעת בו ומחברת אותו ל-
+\begin_inset Formula $S$
+\end_inset
+
+ )אם לא קיימת קשת כזו אז ערך המפתח יהיה 
+\begin_inset Formula $\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נאתחל את הערימה: המפתח של הצומת ההתחלתית 
+\begin_inset Formula $s$
+\end_inset
+
+ יהיה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+.
+ ושל כל צומת אחר יהיה 
+\begin_inset Formula $\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+צעד: ברגע שמוציאים את צומת 
+\begin_inset Formula $u$
+\end_inset
+
+ מהערימה מעדכנים את המפתחות של השכנים שלו שעדיין בערימה.
+\end_layout
+
+\begin_layout Subsection
+האלגוריתם של
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Kruskal
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+1
+\numeric off
+.
+ מיין את הקשתות: 
+\begin_inset Formula $w(e_{1})\le w(e_{2})\le...\le w(e_{m})$
+\end_inset
+
+.
+ קבע 
+\begin_inset Formula $T\leftarrow\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+2
+\numeric off
+.
+ עבור מ-
+\begin_inset Formula $i=1$
+\end_inset
+
+ עד 
+\begin_inset Formula $m$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Algorithm*
+אם 
+\begin_inset Formula $T\cup\{e_{i}\}$
+\end_inset
+
+ לא מכיל מעגלים אז בצע 
+\begin_inset Formula $T\leftarrow T\cup\{e_{1}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm*
+
+\numeric on
+3
+\numeric off
+.
+ החזר את 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+הוכחה
+\end_layout
+
+\begin_layout Standard
+יהיה נוח להראות כי זה מימוש נכון של השיטה הכללית ואז הנכונות מידית.
+\end_layout
+
+\begin_layout Theorem*
+האלגוריתם של
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Kruskal
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מחזיר עץ פורש מינימום.
+\end_layout
+
+\begin_layout Proof
+נראה שהאלגוריתם הוא מימוש מסויים של השיטה הכללית.
+ כלומר: אם נצבע בכחול כל קשת שהאלגוריתם מוסיף ל-
+\begin_inset Formula $T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ונבצע באדום כל קשת שהאלגוריתם לא מוסיף ל-
+\begin_inset Formula $T$
+\end_inset
+
+ נקבל הפעלה טבעית של הכללים.
+\end_layout
+
+\begin_layout Proof
+נחלק ל-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מקרים:
+\end_layout
+
+\begin_layout Proof
+א.
+ ברגע שהאלגוריתם בוחן את הקשת 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $T\cup\{e_{i}\}$
+\end_inset
+
+ מכיל מעגל, על כן נפרש כי צבע הקשת 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ הוא אדום.
+ 
+\end_layout
+
+\begin_layout Proof
+נראה קיום הכלל האדום: קיים מעגל 
+\begin_inset Formula $C$
+\end_inset
+
+, ובהכרח הקשתות ב-
+\begin_inset Formula $T$
+\end_inset
+
+ הן כחולות ולכן גם במעגל 
+\begin_inset Formula $C$
+\end_inset
+
+ אין קשתות אדומות )כולן כחולות ו
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ לא צבועה(.
+ 
+\end_layout
+
+\begin_layout Proof
+כל הקשתות חוץ מ-
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ צבועות בכחול, ולכן 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ בהכרח היחידה שלא צבועה ולכן גם היא הכי כבדה מבין אלו שלא צבועות.
+\end_layout
+
+\begin_layout Proof
+ב.
+ ברגע שהאלגוריתם בחן את הקשת 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $T\cup\{e_{i}\}$
+\end_inset
+
+ לא נסגר מעגל ולכן נפרש כי צבע הקשת 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ הוא כחול.
+ 
+\end_layout
+
+\begin_layout Proof
+נראה קיום הכלל הכחול: נתבונן בחתך 
+\begin_inset Formula $S$
+\end_inset
+
+ - כל הצמתים כך שקיים מסלול כחול בין 
+\begin_inset Formula $u$
+\end_inset
+
+ אליהם.
+\end_layout
+
+\begin_layout Proof
+מכיוון שמתקיים 
+\begin_inset Formula $u\in S$
+\end_inset
+
+ וכן 
+\begin_inset Formula $v\notin S$
+\end_inset
+
+ אזי 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ חוצה את החתך.
+ 
+\end_layout
+
+\begin_layout Proof
+נוכח כי 
+\begin_inset Formula $v\notin S$
+\end_inset
+
+ בדךר השלילה: נניח בשלילה כי 
+\begin_inset Formula $v\in S$
+\end_inset
+
+ אזי קיים מסלול כחול ב-
+\begin_inset Formula $T$
+\end_inset
+
+ בין 
+\begin_inset Formula $u$
+\end_inset
+
+ ו-
+\begin_inset Formula $v$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $T\cup\{e_{i}\}$
+\end_inset
+
+ מכיל מעגל בסתירה.
+ 
+\end_layout
+
+\begin_layout Proof
+למה אין אף קשת כחולה שחוצה את 
+\begin_inset Formula $S$
+\end_inset
+
+? נניח בשלילה כי יש קשת כחולה 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $x\in S,y\notin S$
+\end_inset
+
+.
+ לכן יש מסלול כחול בין 
+\begin_inset Formula $u$
+\end_inset
+
+ ו-
+\begin_inset Formula $x$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Proof
+נשרשר למסלול זה את הקשת 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ וקיבלנו מסלול כחול בין 
+\begin_inset Formula $u$
+\end_inset
+
+ ו-
+\begin_inset Formula $y$
+\end_inset
+
+ בסתירה לכך ש- 
+\begin_inset Formula $y\notin S$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+מדוע אין אף קשת 
+\begin_inset Formula $e$
+\end_inset
+
+ שחוצה את 
+\begin_inset Formula $S$
+\end_inset
+
+ והיא אינה צבועה, וגם 
+\begin_inset Formula $w(e)<w(e_{i})$
+\end_inset
+
+? אם זה קורה, 
+\begin_inset Formula $e$
+\end_inset
+
+ היתה צריכה להצבע באיטרציה קודמת וזו סתירה.
+\end_layout
+
+\begin_layout Section
+מסלולים קלים ביותר
+\end_layout
+
+\begin_layout Standard
+נתון: גרף מכוון 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ ופונקצית משלק 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ משקל של מסלול 
+\begin_inset Formula $p$
+\end_inset
+
+מוגדר להיות סך משקלי הקשתות ב-
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\begin_inset Formula $w(p)\equiv\sum_{e\in p}w(e)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מטרה: בהינתן שני צמתים 
+\begin_inset Formula $s$
+\end_inset
+
+ו-
+\begin_inset Formula $t$
+\end_inset
+
+ מה הוא המסלול הקל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $t$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Remark*
+אם 
+\begin_inset Formula $p$
+\end_inset
+
+ מסלול קל ביותר מ-
+\begin_inset Formula $u$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ אז כל תת-מסלול של 
+\begin_inset Formula $p$
+\end_inset
+
+ גם הוא קל ביותר.
+\end_layout
+
+\begin_layout Proof
+נסתכל על המסלול 
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\backslash
+
+\begin_inset Formula 
+\[
+u=u_{0}\rightarrow u_{1}...\rightarrow u_{k}=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נסתכל על תת-המסלול מ
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ ל-
+\begin_inset Formula $u_{j}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $i<j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מתקיים: 
+\begin_inset Formula $w(p)=w(p')+w(p_{i})+w(p_{j})$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
