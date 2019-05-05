@@ -1107,9 +1107,205 @@ w'(T') & =w(T')-s'\cdot\epsilon
  וזה מוכיח מה שרצינו.
 \end_layout
 
+\begin_layout Section
+בוחן אמצע
+\end_layout
+
 \begin_layout Standard
+מה צריך לדעת:
+\end_layout
+
+\begin_layout Enumerate
+כל השאלות מתרגילי בית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ ו-
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Enumerate
+למדנו שישה אלגוריתמים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מיון טופולוגי - זמן לינארי
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $BFS$
+\end_inset
+
+ ו-
+\begin_inset Formula $DFS$
+\end_inset
+
+ - זמן לינארי.
+\end_layout
+
+\begin_layout Enumerate
+בניית גרף הרכיבים הקשירים היטב - זמן לינארי.
+\end_layout
+
+\begin_layout Enumerate
+מציאת עץ פורש מינימאלי - 
+\begin_inset Formula $Prim$
+\end_inset
+
+ ו-
+\begin_inset Formula $Kruskal$
+\end_inset
+
+ - זמן 
+\begin_inset Formula $O(ElogV)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+שימוש באלגוריתמים הללו:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+האם גרף נתון הוא דו-צדדי - 
+\begin_inset Formula $O(E+V)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+מציאת מסלול באורך זוגי קצר ביותר מאיזשהי צומת 
+\begin_inset Formula $s$
+\end_inset
+
+ לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ - 
+\begin_inset Formula $O(V+E)$
+\end_inset
+
 
 \end_layout
 
+\begin_layout Enumerate
+מציאת כל השורשים בגרף -
+\begin_inset Formula $O(V+E)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+הכרעה האם גרף הוא קשיר למחצה )לכל 
+\begin_inset Formula $uv$
+\end_inset
+
+ קיים מסלול מ-
+\bar under
+
+\begin_inset Formula $u$
+\end_inset
+
+
+\bar default
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ או ההפך(
+\end_layout
+
+\begin_layout Enumerate
+מציאת 
+\begin_inset Formula $MST$
+\end_inset
+
+ צהוב ביותר - 
+\begin_inset Formula $O(ElogV)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+בהינתן 
+\begin_inset Formula $e\in E$
+\end_inset
+
+ האם קיים 
+\begin_inset Formula $MST$
+\end_inset
+
+שמכיל או לא מכיל את 
+\begin_inset Formula $e$
+\end_inset
+
+ ב-
+\begin_inset Formula $O(V+E)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
