@@ -1,0 +1,1408 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+fixltx2e
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Author
+איתי ווייסמן
+\end_layout
+
+\begin_layout Section
+תזכורת - האלגוריתם של
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series medium
+\shape default
+\size normal
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\end_layout
+
+\begin_layout Algorithm
+האלגוריתם של
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אתחול: 
+\begin_inset Formula $d\left(s\right)\leftarrow0$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $v\ne s$
+\end_inset
+
+: 
+\begin_inset Formula $d(s)\leftarrow\infty$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Q\leftarrow V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+כל עוד 
+\begin_inset Formula $Q\ne\emptyset$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+יהי 
+\begin_inset Formula $u$
+\end_inset
+
+ הצומת בעל 
+\begin_inset Formula $d\left(u\right)$
+\end_inset
+
+ הקטן ביותר ב-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל קשת 
+\begin_inset Formula $\left(u\rightarrow v\right)\in E$
+\end_inset
+
+, אם 
+\begin_inset Formula $d\left(v\right)>d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+ אז 
+\begin_inset Formula $d\left(v\right)\leftarrow d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+מוציאים את 
+\begin_inset Formula $u$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Proof
+נוכיח נכונות.
+\end_layout
+
+\begin_layout Proof
+ניתן להיעזר בנכונות השיטה הגנרית, מספיק להראות שכשהאלגוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עוצר, כל קשת 
+\begin_inset Formula $\left(u\rightarrow v\right)\in E$
+\end_inset
+
+ מקיימת: 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+הראנו בשיעור הקודם והוכחנו את המסקנה באה:
+\end_layout
+
+\begin_deeper
+\begin_layout Corollary
+נניח כי 
+\begin_inset Formula $v$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+ באיטרציה מאוחרת מהאיטרציה ש-
+\begin_inset Formula $u$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ אזי: 
+\begin_inset Formula $d\left(u\right)\le d\left(v\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+בנוסף הראנו והוכחנו את המסקנה הנוספת הזאת:
+\end_layout
+
+\begin_deeper
+\begin_layout Corollary
+לכל צומת 
+\begin_inset Formula $u$
+\end_inset
+
+, 
+\begin_inset Formula $d\left(u\right)$
+\end_inset
+
+ לא מתעדכן אחרי הוצאת 
+\begin_inset Formula $u$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+נזכיר כי הוכחנו את המסקנה הזו על דרך השלילה וקיבלנו סתירה למסקנה הקודמת.
+\end_layout
+
+\begin_layout Proof
+נרצה בהתבסס
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+המסקנות הללו להראות את הטענה הבאה:
+\end_layout
+
+\begin_deeper
+\begin_layout Claim
+בסיום ריצת האלגוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לכל 
+\begin_inset Formula $\left(u\rightarrow v\right)\in E$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+נסתכל על קשת 
+\begin_inset Formula $u\rightarrow v$
+\end_inset
+
+.
+ יכול לקרות אחד מהבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $v$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+ לפני 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+בסיום האיטרציה בה 
+\begin_inset Formula $u$
+\end_inset
+
+ יצא מ-
+\begin_inset Formula $Q$
+\end_inset
+
+, בהכרח מתקיים 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+לפי מסקנה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+, עד סיום ריצת האלגוריתם 
+\begin_inset Formula $d\left(u\right)$
+\end_inset
+
+ לא משתנה וכן 
+\begin_inset Formula $d\left(v\right)$
+\end_inset
+
+ יכול רק לקטון.
+\begin_inset Newline newline
+\end_inset
+
+ולכן בסיום ריצת האלגוריתם 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $u$
+\end_inset
+
+ יצא אחרי 
+\begin_inset Formula $v$
+\end_inset
+
+ מ-
+\begin_inset Formula $Q$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לפי מסקנה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתקיים: 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לפי מסקנה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אי שוויון זה יתקיים גם כשהאלגוריתם עוצר.
+\begin_inset Newline newline
+\end_inset
+
+בנוסף, בגלל שמשקלי הקשתות אי שליליים, מתקיים: 
+\begin_inset Formula $d\left(v\right)\le d\left(u\right)\le d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+וסיימנו בזאת את ההוכחה.
+\end_layout
+
+\begin_layout Standard
+שאלה מעניינת לשאול היא מה קורה כאשר יש משקלים שליליים בגרף?
+\end_layout
+
+\begin_layout Standard
+האלגוריתם של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Dijkstra
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יכול להיכשל גם כשיש אפילו קשת אחת שלילית בגרף ואין מעגלים שליליים.
+\end_layout
+
+\begin_layout Section
+אלגוריתם שמתמודד עם קשתות שליליות
+\end_layout
+
+\begin_layout Standard
+הרעיון - האלגוריתם יתקדם בפאזות ובכל פאזה נעבור על כל הקשתות הגרף בסדר כלשהו
+ ונבדוק הפרה של אי שוויון המשולש ביחס ל-
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+האלגוריתם של
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Bellman-Ford
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אתחול: 
+\begin_inset Formula $d\left(s\right)\leftarrow0$
+\end_inset
+
+, לכל 
+\begin_inset Formula $v\ne s$
+\end_inset
+
+ נגדיר 
+\begin_inset Formula $d\left(s\right)\leftarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+מבצעים 
+\begin_inset Formula $n-1$
+\end_inset
+
+ פעמים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+עוברים על כל הקשתות פעם אחת ולכל קשת 
+\begin_inset Formula $\left(u\rightarrow v\right)\in E$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula $d\left(v\right)>d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+ אז: 
+\begin_inset Formula $d\left(v\right)\leftarrow d\left(u\right)+w\left(u\rightarrow v\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+
+\bar under
+זמן הריצה:
+\bar default
+ 
+\begin_inset Formula $O\left(V\cdot E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+אם קיים מסלול קל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v$
+\end_inset
+
+ שמכיל 
+\begin_inset Formula $k$
+\end_inset
+
+ קשתות, אז בסיום הפאזה ה-
+\begin_inset Formula $k$
+\end_inset
+
+: 
+\begin_inset Formula $d\left(v\right)=\delta\left(s,v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הערה - נכונות האלגוריתם נובעת מטענה זו ומהתכונה של השיטה הגנרית שאומרת שבכל
+ שלב של ריצת השיטה הגנרית אין פספוס כלפי מטה.
+ כלומר:
+\begin_inset Formula 
+\[
+d\left(v\right)\ge\delta\left(s,v\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נוכיח את הטענה באינדוקציה על 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+בסיס:
+\bar default
+ עבור 
+\begin_inset Formula $k=0$
+\end_inset
+
+, רק עבור 
+\begin_inset Formula $s$
+\end_inset
+
+ יש מסלול קל ביותר מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $s$
+\end_inset
+
+ שמכיל אפס קשתות )כי אין מעגלים שליליים(.
+ ואכן מהגדרת האלגוריתם באתחול 
+\begin_inset Formula $d\left(s\right)=0=\delta\left(s,s\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+צעד:
+\end_layout
+
+\begin_layout Proof
+נניח של-
+\begin_inset Formula $v$
+\end_inset
+
+ יש מסלול קל ביותר 
+\begin_inset Formula $P$
+\end_inset
+
+ מ-
+\begin_inset Formula $s$
+\end_inset
+
+ אליו שמכיל 
+\begin_inset Formula $k+1$
+\end_inset
+
+ קשתות:
+\begin_inset Formula 
+\[
+P:s=v_{0}\rightarrow v_{1}\rightarrow\ldots\rightarrow v_{k}\rightarrow v_{k+1}=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לכן הרישא של 
+\begin_inset Formula $P$
+\end_inset
+
+ מ-
+\begin_inset Formula $s$
+\end_inset
+
+ ל-
+\begin_inset Formula $v_{k}$
+\end_inset
+
+היא מסלול קל ביותר שמכיל 
+\begin_inset Formula $k$
+\end_inset
+
+ קשתות.
+\end_layout
+
+\begin_layout Proof
+ולפי הנחת האינדוקציה על 
+\begin_inset Formula $v_{k}$
+\end_inset
+
+ בסיום הפאזה מובטח ש-
+\begin_inset Formula $d\left(v_{k}\right)=\delta(s,v_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+ולכן במהלך הפאזה ה-
+\begin_inset Formula $k+1$
+\end_inset
+
+ בוחנים את הקשת 
+\begin_inset Formula $v_{k}\rightarrow v_{k+1}$
+\end_inset
+
+ ואז מובטח כי בסיום הפאזה ה-
+\begin_inset Formula $k+1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+d\left(v_{k+1}\right)\le d\left(v_{k}\right)+w\left(v_{k}\rightarrow v_{k+1}\right)=\delta\left(s,v_{k}\right)+w\left(v_{k}\rightarrow v_{k+1}\right)=\delta\left(s,v_{k+1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ולפי התכוה של השיטה הגנרית נקבל בהכרח ש-
+\begin_inset Formula $d\left(v_{k+1}\right)=\delta\left(s,v_{k+1}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+אלגוריתמים חמדניים
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הרעיון
+\bar default
+: הצגת גישה לפתרון בעיה בה האלגוריתם בוחר בכל צעד את האפשרות הטובה ביותר
+ כרגע.
+\end_layout
+
+\begin_layout Example
+נתונת 
+\begin_inset Formula $n$
+\end_inset
+
+ משימות, וכל משימה 
+\begin_inset Formula $i$
+\end_inset
+
+ מיוצגת על ידי זמן התחלה 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+וזמן סיום 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+.
+ יש מכונה בודדת שיכולה להריץ את המשימות.
+ המטרה היא לחבור אוסף משימות גדול ביותר כך שכל שתי משימות שנבחרו לא נחתכות.
+\end_layout
+
+\begin_layout Remark
+בעיה זו למעשה נקראת 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+גרף אינטרוולים
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\series default
+כל צומת מייצג אינטרוול, ויש קשת בין צמתים אם ורק אם האינטרוולים נחתכים.
+ המטרה היא למצוא קבוצה בלתי תלויה גדולה ביותר )תת קבוצה של הצמתים כך שבין
+ כל שנים בתת הקבוצה אין קשת(.
+\end_layout
+
+\begin_layout Algorithm
+תיאור האלגוריתם החמדן:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ממיינים את האינטרוולים לפי זמני סיום: 
+\begin_inset Formula $f_{1}\le f_{2}\le\ldots\le f_{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X\leftarrow\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+עבור 
+\begin_inset Formula $j=1$
+\end_inset
+
+ עד 
+\begin_inset Formula $n$
+\end_inset
+
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+לא נחתך עם אף אינטרוול ב-
+\begin_inset Formula $X$
+\end_inset
+
+ אז 
+\begin_inset Formula $X\leftarrow X\cup\left\{ I_{j}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+החזר את 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\bar under
+זמן ריצה:
+\bar default
+ 
+\begin_inset Formula $O\left(nlogn\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula $k$
+\end_inset
+
+ מ-
+\begin_inset Formula $0$
+\end_inset
+
+ עד 
+\begin_inset Formula $n$
+\end_inset
+
+, בסיום האיטרציה ה-
+\begin_inset Formula $k$
+\end_inset
+
+, קיים פתרון אופטימלי 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+כך ש:
+\begin_inset Formula 
+\[
+\forall1\le j\le k:I_{j}\in X\iff I_{j}\in X^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+במילים פשוטות, קיים פתרון אופטמלי שמסכים עם הפתרון בצעד הנוכחי על האיברים
+ שנכנסו לפתרון ועל האיברים שלא נכנסו לפתרון.
+\end_layout
+
+\begin_layout Corollary
+אם נבחר 
+\begin_inset Formula $k=n$
+\end_inset
+
+ נקבל כי קיים פתרון אופטמלי שזהה לפלט האלגוריתם.
+\end_layout
+
+\begin_layout Proof
+באינדוקציה על 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+בסיס:
+\bar default
+ עבור 
+\begin_inset Formula $k=1$
+\end_inset
+
+.
+ אזי נשים לב כי תמיד 
+\begin_inset Formula $I_{1}\in X$
+\end_inset
+
+, כלומר האלגוריתם בוחר את האינטרוול הראשון.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ פתרון אופטימלי כלשהו.
+\end_layout
+
+\begin_layout Proof
+אם 
+\begin_inset Formula $I_{1}\in X^{*}$
+\end_inset
+
+אז סיימנו.
+\end_layout
+
+\begin_layout Proof
+אחרת, 
+\begin_inset Formula $I_{1}\notin X^{*}$
+\end_inset
+
+.
+ לכן קיים 
+\begin_inset Formula $I_{r}\in X^{*}$
+\end_inset
+
+ האינטרוול בעל זמן הסיום הקטן ביותר שנחתך עם 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+.
+ )אם אין 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+שכזה, אז 
+\begin_inset Formula $X^{*}\cup\left\{ I_{i}\right\} $
+\end_inset
+
+פתרון חוקי וזו סתירה לאופטימליות של 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+, לכן בהכרח קיים כזה(.
+\end_layout
+
+\begin_layout Proof
+נטען ש: 
+\begin_inset Formula $X^{*}\backslash\left\{ I_{r}\right\} \cup\left\{ I_{1}\right\} $
+\end_inset
+
+ פתרון חוקי )אם זה נכון, סיימנו.
+ זאת משום שזה פתרון חוקי שגם הוא אופטימלי(.
+\end_layout
+
+\begin_layout Proof
+בגלל ש-
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ זהו זמן הסיום הקטן ביותר של כל האינטרוולים )מאופן הבחירה החמדני( אז 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+ הוא יחיד, כלומר אין עוד אינטרוול ב-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+שנחתך עם 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+אחרת 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+לא היה אופטימלי.
+\end_layout
+
+\begin_layout Proof
+לכן: 
+\begin_inset Formula $X^{*}\backslash\left\{ I_{r}\right\} \cup\left\{ I_{1}\right\} $
+\end_inset
+
+ פתרון חוקי.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+צעד:
+\end_layout
+
+\begin_layout Proof
+בשיעור הבא.
+ די דומה רק עם חלוקה למקרים - בחרנו להכניס את 
+\begin_inset Formula $I_{k}$
+\end_inset
+
+לתוך 
+\begin_inset Formula $X$
+\end_inset
+
+ או שבחרנו לא להכניס.
+\end_layout
+
+\end_body
+\end_document
