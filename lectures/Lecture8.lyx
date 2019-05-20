@@ -1,0 +1,1188 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+fixltx2e
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Author
+איתי ווייסמן
+\end_layout
+
+\begin_layout Section
+תזכורת - שיבוץ אינטרוולים
+\end_layout
+
+\begin_layout Claim
+בסיס הצעד ה-
+\begin_inset Formula $k$
+\end_inset
+
+ של האלגוריתם, קיים פתרון אופטימלי 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+כך ש:
+\begin_inset Formula 
+\[
+\forall1\le j\le k:I_{j}\in X^{*}\iff I_{j}\in X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+באינדוקציה על 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+בסיס:
+\bar default
+ עבור 
+\begin_inset Formula $k=1$
+\end_inset
+
+.
+ עשינו בשיעור הקודם - על ידי החלפה.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+צעד:
+\bar default
+ הנחת האינדוקציה אומרת שיש פתרון אופטימלי 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\forall1\le j\le k:I_{j}\in X^{*}\iff I_{j}\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נסתכל על האינטרוול ה-
+\begin_inset Formula $k+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נחלק לשני מקרים לפי האם האלגוריתם בחר את 
+\begin_inset Formula $I_{k+!}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+האלגוריתם בחר את 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $I_{k+1}\in X$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $I_{k+1}\in X^{*}$
+\end_inset
+
+ אז סיימנו.
+ אחרת, 
+\begin_inset Formula $I_{k+1}\notin X^{*}$
+\end_inset
+
+ ולכן בהכרח קיים אינטרוול ב-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+שנחתך עם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+נבחר את האינטרוול 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+ בעל האינדקס המינימלי מ-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+שנחתך עם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ניזכר שאנו ממיינים לפי זמן הסיום ולכן בהכרח מתקיים 
+\begin_inset Formula $r\ge k+2$
+\end_inset
+
+ כי אם 
+\begin_inset Formula $r\le k$
+\end_inset
+
+ אז בגלל שהאינטרוול נמצא ב-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+נקבל ש-
+\begin_inset Formula $I_{r}\in X$
+\end_inset
+
+ אך 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+ ו-
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+נחתכים בסתירה לכך שהאלגוריתם בחר את 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נשים לב ש-
+\begin_inset Formula $I_{r}$
+\end_inset
+
+ הוא היחיד ב-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+שנחתך עם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+, אחרת 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+לא פיזיבלי.
+\begin_inset Newline newline
+\end_inset
+
+נסתכל על : 
+\begin_inset Formula $X^{*}\backslash\left\{ I_{r}\right\} \cup\left\{ I_{k+1}\right\} $
+\end_inset
+
+.
+ נשים לב שזהו פתרון אופטימלי מבחינת הגודל )כי לא שינינו את הגודל(.
+ נרצה להראות שהוא פיזיבלי, כלומר זהו פתרון חוקי.
+\begin_inset Newline newline
+\end_inset
+
+נראה כי 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ לא נחתך עם אף אינטרוול ב- 
+\begin_inset Formula $X^{*}\backslash\left\{ I_{r}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+האם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ נחתך עם משימות עם אינדקס 
+\begin_inset Formula $r+1,r+2,\ldots,n$
+\end_inset
+
+ ? לא, משום שהם לא יכולים להיחתך עם 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+ ו
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ מסתיים לפניו.
+\end_layout
+
+\begin_layout Itemize
+האם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ נחתך עם משימות עם אינדקס 
+\begin_inset Formula $k+2,k+3,\ldots,r-1$
+\end_inset
+
+? לא.
+ משום שדאגנו לבחור את 
+\begin_inset Formula $r$
+\end_inset
+
+ בתור המינימלי.
+\end_layout
+
+\begin_layout Itemize
+האם 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ נחתך עם משימות עם אינדקסים 
+\begin_inset Formula $1,2,\ldots,k$
+\end_inset
+
+ ? לא.
+ משום שבהנחת האינדוקציה הנחנו ש
+\begin_inset Formula $X^{*}$
+\end_inset
+
+מסכים עם 
+\begin_inset Formula $X$
+\end_inset
+
+ והוא אופטימלי.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+האלגוריתם לא בחר את 
+\begin_inset Formula $I_{k+1}$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $I_{k+1}\notin X$
+\end_inset
+
+.
+ לפי הנחת האינדוקציה, 
+\begin_inset Formula $X^{*}$
+\end_inset
+
+ אינו יכול להכיל את האינטרוול ה-
+\begin_inset Formula $k+1$
+\end_inset
+
+ כי אז ב-
+\begin_inset Formula $X^{*}$
+\end_inset
+
+היו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אינטרוולים שנחתכים.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+מיקסום רווח
+\end_layout
+
+\begin_layout Standard
+כעת בנוסף לנתוני הבעיה מקודם, נתון כי לכל אינטרוול 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ קיים רווח 
+\begin_inset Formula $p_{j}\ge0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+אנו רוצים למצוא פתרון חוקי שגם ממקסם את סך הרווח מכל האינטרוולים?
+\end_layout
+
+\begin_layout Standard
+מעניין לגלות כי כנראה לא קיים אלגוריתם חמדן שפותר בעיה זו.
+\end_layout
+
+\begin_layout Section
+קידוד
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Huffman
+\end_layout
+
+\begin_layout Standard
+בגדול, בהינתן קובץ המורכב מאוסף תווים רוצים למצוא איך 
+\begin_inset Quotes eld
+\end_inset
+
+לקודד
+\begin_inset Quotes erd
+\end_inset
+
+ אותו כך שאורך הקובץ המקודד יהיה כמה שיותר קצר.
+ בקידוד, כל תו בקובץ יהפוך למחרוזת בינארית )מאורך כלשהו(.
+\end_layout
+
+\begin_layout Definition
+מילת קוד - מחרוזת 
+\begin_inset Formula $w=w_{1}w_{2}\ldots w_{n}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $w_{i}\in\left\{ 0,1\right\} $
+\end_inset
+
+.
+ האורך של מילת קוד יסומן 
+\begin_inset Formula $l\left(w\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+קוד הוא אוסף של מילות קוד
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $C=\left\{ c1,c2,c3\right\} $
+\end_inset
+
+ וכן 
+\begin_inset Formula $c_{1}=01,c_{2}=0,c_{3}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+פעולת הקידוד נעְְׁשת ע
+\begin_inset Quotes erd
+\end_inset
+
+י החלפת כל תו במילת הקוד שמתאימה לו )פונקציה(.
+\end_layout
+
+\begin_layout Standard
+איך מפענחים קידוד? זה אפשרי רק אם הקוד שלנו מאופיין כך שיש רק דרך אחת לפענחו.
+\end_layout
+
+\begin_layout Standard
+נתמקד בקודים 
+\series bold
+חסרי רישאות
+\series default
+ בהם אין מילת קוד שהיא רישא של מילה אחרת.
+ עבור קודים חסרי רישאות הפענוח פשוט ונעשה על ידי קריאה של הקובץ המקודד.
+\end_layout
+
+\begin_layout Description
+נתון 
+\begin_inset Formula $n$
+\end_inset
+
+ תווים, ולתו ה-
+\begin_inset Formula $i$
+\end_inset
+
+ נתונה תדירות 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+מטרה למצוא קוד שבו התו ה-
+\begin_inset Formula $i$
+\end_inset
+
+ מותאם למילת הקוד 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+, שיש דרך אחת לפענח אותו, שמביא למינימום: 
+\begin_inset Formula $\Sigma_{i=1}^{n}l\left(c\right)\cdot f_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+ללא הוכחה.
+ מבין הפתרונות האופטימליים, קיים לפחות אחד שהוא קוד חסר רישאות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Question
+האם יש דרך נוחה לייצג קוד חסר רישאות?
+\end_layout
+
+\begin_layout Standard
+ניתן לייצר קוד חסר רישאות על ידי עץ בינארי )למשל שמאלה זה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+וימינה זה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+( ועלי העץ יהיו מילות הקוד, כלומר מבנה של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+trie
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Claim
+קוד אופטימלי מיוצג ע
+\begin_inset Quotes erd
+\end_inset
+
+י עץ מלא.
+\end_layout
+
+\begin_layout Subsection
+איך נמצא עץ אופטימלי?
+\end_layout
+
+\begin_layout Standard
+רעיון - אם שני התווים עם התדירות הנמוכה ביותר יהיו עלים אחים עמוקים ביותר
+ בעץ.
+ נאחד אותם לתו יחיד ממשקל 
+\begin_inset Formula $f_{i}+f_{j}$
+\end_inset
+
+ ונפתור אותה בעיה אך כעת על קלט של 
+\begin_inset Formula $n-1$
+\end_inset
+
+ תווים.
+\end_layout
+
+\begin_layout Algorithm
+האלגוריתם של
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Huffman
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\numeric on
+1952
+\numeric off
+(
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נמיין את התווים הנתונים לפי התדירות: 
+\begin_inset Formula $f_{1}\ge f_{2}\ge\ldots\ge f_{n-1}\ge f_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+נוציא את התווים ה-
+\begin_inset Formula $n$
+\end_inset
+
+ וה-
+\begin_inset Formula $n-1$
+\end_inset
+
+ ובמקום נכניס תו 
+\begin_inset Quotes eld
+\end_inset
+
+מלאכותי
+\begin_inset Quotes erd
+\end_inset
+
+ בעל תדירות 
+\begin_inset Formula $f_{n-1}+f_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+נפתור )רקורסיבית( את הבעיה עבור הקלט המצומצם.
+ וקיבלנו עץ 
+\begin_inset Formula $T'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+ב-
+\begin_inset Formula $T'$
+\end_inset
+
+ נוסיף לעלה שמייצג את התו המלאכותי שיצרנו, שני ילדים ישירים, אחד עבור התו
+ ה-
+\begin_inset Formula $n$
+\end_inset
+
+ והשני עבור התו ה-
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+החזר את 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+תנאי העצירה של האלגוריתם הרקורסיבי: אם 
+\begin_inset Formula $n=2$
+\end_inset
+
+ מחזירים עץ טריוואלי מתאים להם: 
+\begin_inset Formula $f_{1}\leftarrow r\rightarrow f_{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula $x$
+\end_inset
+
+ ו-
+\begin_inset Formula $y$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מילות הקוד בעלות התדירות הנמוכה ביותר.
+ אז קיים פתרון אופטימלי ש-
+\begin_inset Formula $x$
+\end_inset
+
+ ו-
+\begin_inset Formula $y$
+\end_inset
+
+ עלים אחים נמוכים ביותר.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $T$
+\end_inset
+
+ עץ אופטימלי.
+ בלי הגבלת הכלליות: 
+\begin_inset Formula $f_{x}\le f_{y}$
+\end_inset
+
+ וגם 
+\begin_inset Formula $f_{a}\le f_{b}$
+\end_inset
+
+.
+ ניצור עץ חדש בו נחליף בין 
+\begin_inset Formula $x$
+\end_inset
+
+ ו-
+\begin_inset Formula $a$
+\end_inset
+
+ ובין 
+\begin_inset Formula $y$
+\end_inset
+
+ ו-
+\begin_inset Formula $b$
+\end_inset
+
+ ובכך נקבע כי הם אחים.
+\end_layout
+
+\begin_layout Proof
+מה השינוי בערך של 
+\begin_inset Formula $T$
+\end_inset
+
+? 
+\begin_inset Formula $l\left(x\right)f_{x}+l\left(y\right)f_{y}+l\left(a\right)f_{a}+l\left(b\right)f_{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מתקיים 
+\begin_inset Formula $l\left(x)\le l\left(a\right)\right)$
+\end_inset
+
+ וגם 
+\begin_inset Formula $f_{y}\le f_{b}$
+\end_inset
+
+.
+ באופן דומה 
+\begin_inset Formula $l\left(y\right)\le l\left(b\right)$
+\end_inset
+
+ וגם 
+\begin_inset Formula $f_{y}\le f_{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+ולכן אם נבצע את ההחלפה הערך של 
+\begin_inset Formula $T$
+\end_inset
+
+ לא יכול לגדול ולא נפגעת האופטימליות.
+\end_layout
+
+\begin_layout Corollary
+נסמן ב-
+\begin_inset Formula $x$
+\end_inset
+
+ וב-
+\begin_inset Formula $y$
+\end_inset
+
+ את שני התווים בעלי התדירות הנמוכה ביותר וב-
+\begin_inset Formula $g$
+\end_inset
+
+ את התו המלאכותי שהוספנו במקום שניהם.
+\end_layout
+
+\begin_layout Corollary
+נסמן ב-
+\begin_inset Formula $cost\left(T\right)$
+\end_inset
+
+ את ערך העץ 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+נסמן ב-
+\begin_inset Formula $T'$
+\end_inset
+
+ את העץ המתקבל מהקריאה הרקורסיבית.
+ מתקיים: 
+\begin_inset Formula 
+\begin{align*}
+cost(T) & =cost\left(T'\right)-l_{T}\left(g\right)f_{g}+\left(l\left(g\right)+1\right)\left(f_{x}+f_{y}\right)\\
+ & =cost\left(T'\right)+f_{x}+f_{y}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+בעזרת טענה
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+והמסקנה אפשר להוכיח נכונות האלגוריתם: ניתן להניח בשלילה.
+\end_layout
+
+\end_body
+\end_document

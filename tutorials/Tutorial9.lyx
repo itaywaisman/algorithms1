@@ -1,0 +1,1126 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-ams-extended-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תרגול
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Section
+תזכורת
+\end_layout
+
+\begin_layout Enumerate
+בעיית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+SSSP
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- נתונים גרף 
+\begin_inset Formula $G$
+\end_inset
+
+, פונקציית משקל 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+ וכן צומת מקור 
+\begin_inset Formula $s\in V$
+\end_inset
+
+.
+ צריך למצוא מסלול קל ביותר מהצומת 
+\begin_inset Formula $s$
+\end_inset
+
+ לכל צומת 
+\begin_inset Formula $v\in V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+אלגוריתם 
+\begin_inset Formula $Dijkstra$
+\end_inset
+
+ - זמן ריצה 
+\begin_inset Formula $O(V+ElogV)$
+\end_inset
+
+.
+ הנחה: אין משקל שלילי.
+\end_layout
+
+\begin_layout Enumerate
+אלגוריתם 
+\begin_inset Formula $Bellman-Ford$
+\end_inset
+
+ - זמן ריצה: 
+\begin_inset Formula $O(V\cdot E)$
+\end_inset
+
+ - עובד עם משקלים שליליים אך יותר איטי.
+\end_layout
+
+\begin_layout Section
+בעיית
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+APSP
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+-
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+All Pairs Shortest Path
+\end_layout
+
+\begin_layout Problem
+נתונים גרף 
+\begin_inset Formula $G=\left(V,E\right)$
+\end_inset
+
+ ופונקציית משקל 
+\begin_inset Formula $w:E\rightarrow\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+יש למצוא מסלול קל ביותר מכל 
+\begin_inset Formula $u\in V$
+\end_inset
+
+ לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+פתרון הבעיה באמצעות האלגוריתמים שאנו מכירים
+\end_layout
+
+\begin_layout Standard
+נשים לב כי אנו כבר יודעים לפתור בעיה זו בהתבסס על אלגוריתמי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+SSSP
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Algorithm
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל צומת 
+\begin_inset Formula $s\in V$
+\end_inset
+
+ בצע:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הרץ 
+\begin_inset Formula $Dijkstra$
+\end_inset
+
+ מהצומת 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+באלגוריתם זה אנו מניחים כי אין משקלים שליליים.
+\end_layout
+
+\begin_layout Standard
+זמן ריצה: 
+\begin_inset Formula $O\left(V^{2}+E\cdot V\cdot logV\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+מבוסס 
+\begin_inset Formula $Bellman-Ford$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל צומת 
+\begin_inset Formula $s\in V$
+\end_inset
+
+ בצע:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הרץ 
+\begin_inset Formula $Bellman-Ford$
+\end_inset
+
+ מהצומת 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+זמן ריצה: 
+\begin_inset Formula $O\left(V^{2}\cdot E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+פתרון יעיל יותר
+\end_layout
+
+\begin_layout Standard
+מטרה: אלגוריתם עם זמן ריצה 
+\begin_inset Formula $O\left(V^{2}+E\cdot V\cdot logV\right)$
+\end_inset
+
+ שעובד עם משקלים שליליים.
+\end_layout
+
+\begin_layout Standard
+רעיון: נגדיר פונקציית משקל 
+\begin_inset Formula $w'$
+\end_inset
+
+ כך ש:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $w'$
+\end_inset
+
+ היא אי-שלילית.
+\end_layout
+
+\begin_layout Enumerate
+לכל מסלול 
+\begin_inset Formula $p$
+\end_inset
+
+: 
+\begin_inset Formula $p$
+\end_inset
+
+ קל ביותר לפי 
+\begin_inset Formula $w'$
+\end_inset
+
+ 
+\begin_inset Formula $\iff$
+\end_inset
+
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ קל ביותר לפי 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+מציאת 
+\begin_inset Formula $w'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+נגדיר 
+\begin_inset Quotes eld
+\end_inset
+
+הרבה
+\begin_inset Quotes erd
+\end_inset
+
+ )אינסוף( פונקציות משקל שמקיימות את דרישה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Enumerate
+מבין הפונקציות הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל נמצא אחת שהיא אי-שלילת.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שלב 
+\numeric on
+1
+\numeric off
+:
+\end_layout
+
+\begin_layout Standard
+ניקח פונקציה 
+\begin_inset Formula $h:V\rightarrow\mathbb{R}$
+\end_inset
+
+ ונגדיר: 
+\begin_inset Formula $w_{h}\left(u\rightarrow v\right)=w\left(u\rightarrow v\right)+h\left(u\right)-h\left(v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula $h:V\rightarrow\mathbb{R}$
+\end_inset
+
+ הפונקציה 
+\begin_inset Formula $w_{h}$
+\end_inset
+
+ מקיימת את דרישה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula $h_{min}\left(u\right)$
+\end_inset
+
+ - המשקל המינימלי של מסלול שמסתיים ב-
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+עבור 
+\begin_inset Formula $h_{min}$
+\end_inset
+
+ הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל מתקיים כי 
+\begin_inset Formula $w_{h}$
+\end_inset
+
+ אי שלילית.
+ כלומר לכל 
+\begin_inset Formula $uv\in E$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $w\left(uv\right)+h_{min}\left(u\right)-h_{min}\left(v\right)\ge0$
+\end_inset
+
+ או לחילופין 
+\begin_inset Formula $w\left(uv\right)+h_{min}\left(u\right)\ge h_{min}\left(v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+ההוכחה די טריוואלית.
+\end_layout
+
+\begin_layout Standard
+הבעיה היותר מעניינת היא איך למצוא את 
+\begin_inset Formula $h_{min}\left(u\right)$
+\end_inset
+
+ הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל.
+\end_layout
+
+\begin_layout Algorithm
+למציאת 
+\begin_inset Formula $h_{min}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נוסיף לגרף צומת חדש 
+\begin_inset Formula $s$
+\end_inset
+
+ ונחבר קשת ממנו לכל צומת במשקל
+\family roman
+\series medium
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+.
+\end_layout
+
+\begin_layout Enumerate
+נריץ 
+\begin_inset Formula $Bellman-Ford$
+\end_inset
+
+ מהצומת 
+\begin_inset Formula $s$
+\end_inset
+
+ וכך נמצא את המסלול המינימלי.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+סיבוכיות
+\end_layout
+
+\begin_layout Standard
+מציאת פונקציה אי שלילית תיקח 
+\begin_inset Formula $O\left(E\cdot V\right)$
+\end_inset
+
+ כסיבוכיות 
+\begin_inset Formula $Bellman-Ford$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הרצת 
+\begin_inset Formula $Dijkstra$
+\end_inset
+
+ על כל הצמתים תיקח כמו שראינו 
+\begin_inset Formula $O\left(V^{2}+E\cdot V\cdot logV\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+צביעת גרפים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+יהיא 
+\begin_inset Formula $G=\left(V,E\right)$
+\end_inset
+
+ גרף לא מכוון.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+צביעת צמתים חוקית של 
+\begin_inset Formula $G$
+\end_inset
+
+ היא פונקציה 
+\begin_inset Formula $c:V\rightarrow\mathbb{Z}^{+}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $uv\in E$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $c\left(u\right)=c\left(v\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+צביעה 
+\begin_inset Formula $c$
+\end_inset
+
+ תיקרא 
+\begin_inset Formula $k$
+\end_inset
+
+ - צביעה אם לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ 
+\begin_inset Formula $c\left(v\right)\le k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+
+ יקרא 
+\begin_inset Formula $k$
+\end_inset
+
+ - צביע אם קיימת 
+\begin_inset Formula $k$
+\end_inset
+
+ - צביעה של 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+המספר הכרומטי של 
+\begin_inset Formula $G$
+\end_inset
+
+ הוא ה-
+\begin_inset Formula $k$
+\end_inset
+
+ מינימלי כך ש-
+\begin_inset Formula $G$
+\end_inset
+
+ הוא 
+\begin_inset Formula $k$
+\end_inset
+
+ - צביע.
+ נסמן אותו ב- 
+\begin_inset Formula $\chi\left(G\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+הבחנות
+\end_layout
+
+\begin_layout Standard
+נשים לב למס' תכונות מעניינות:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+
+ הוא 
+\begin_inset Formula $1$
+\end_inset
+
+ צביע 
+\begin_inset Formula $\iff$
+\end_inset
+
+ 
+\begin_inset Formula $G$
+\end_inset
+
+ חסר קשתות.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+צביע 
+\begin_inset Formula $\iff$
+\end_inset
+
+ 
+\begin_inset Formula $G$
+\end_inset
+
+ דו-צדדי.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+
+ הוא בהכרח 
+\begin_inset Formula $|V|$
+\end_inset
+
+ - צביע.
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם חמדן למציאת המספר הכרומטי של 
+\begin_inset Formula $G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Algorithm
+מציאת המספר הכרומטי:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula $v\in v$
+\end_inset
+
+ בצע:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+השם ב-
+\begin_inset Formula $c\left(v\right)$
+\end_inset
+
+ את הצבע המינימלי שלא נמצא בשימוש ע
+\begin_inset Quotes erd
+\end_inset
+
+י שכן של 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+החזר את 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Claim
+הצביעה המתקבלת היא חוקית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+הצביעה המתקבלת היא 
+\begin_inset Formula $\left(\triangle+1\right)$
+\end_inset
+
+ - צביעה כאשר 
+\begin_inset Formula $\triangle$
+\end_inset
+
+ היא הדרגה המקסימלית של צומת בגרף.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+תרגיל
+\end_layout
+
+\begin_layout Standard
+הציעו אלגוריתם פולינומי שמקבל גרף לא מכוון 
+\begin_inset Formula $G=\left(V,E\right)$
+\end_inset
+
+ ומכריע האם 
+\begin_inset Formula $G$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- צביע.
+ )רמז: בעיה לא פתירה בענף מדעי מחשב(
+\end_layout
+
+\end_body
+\end_document
