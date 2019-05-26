@@ -1,0 +1,833 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-ams-extended-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תרגול
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\end_layout
+
+\begin_layout Section
+כיסוי צמתים -
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+vertex cover
+\end_layout
+
+\begin_layout Definition
+יהא 
+\begin_inset Formula $G=\left(V,E\right)$
+\end_inset
+
+ גרף לא מכוון.
+ תהא 
+\begin_inset Formula $U\subseteq V$
+\end_inset
+
+ קבוצת צמתים.
+ נאמר כי 
+\begin_inset Formula $U$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+vertex-cover
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)מסמנים 
+\begin_inset Formula $VC$
+\end_inset
+
+( אם לכל קשת 
+\begin_inset Formula $uv\in E$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $u\in U$
+\end_inset
+
+ או 
+\begin_inset Formula $v\in U$
+\end_inset
+
+ )או גם וגם(.
+\end_layout
+
+\begin_layout Subsection
+מציאת 
+\begin_inset Formula $VC$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נרצה למצוא עץ פורש לגרף ועליו למצוא 
+\begin_inset Formula $VC$
+\end_inset
+
+ מינימלי.
+\end_layout
+
+\begin_layout Exercise
+הציעו אלגוריתם שמקבל עץ לא מכוון 
+\begin_inset Formula $T=\left(V,E\right)$
+\end_inset
+
+, ומחזיר 
+\begin_inset Formula $VC$
+\end_inset
+
+ של 
+\begin_inset Formula $T$
+\end_inset
+
+ שגודלו מינימלי.
+\end_layout
+
+\begin_layout Subsubsection
+פתרון
+\end_layout
+
+\begin_layout Algorithm
+מציאת 
+\begin_inset Formula $VC$
+\end_inset
+
+ לעץ 
+\begin_inset Formula $T=\left(V,C\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $C\leftarrow\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+כל עוד קיימת קשת ב-
+\begin_inset Formula $T$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מצא עלה 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ יהא 
+\begin_inset Formula $v$
+\end_inset
+
+ השכן של 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C\leftarrow C\cup\left\{ v\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+הסר מ-
+\begin_inset Formula $T$
+\end_inset
+
+ את כל הקשתות הנוגעות ב-
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+החזר את 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+הוכחת נכונות
+\end_layout
+
+\begin_layout Standard
+זהו אלגוריתם חמדן, נוכיח בהתבסס על השיטה שלמדנו בתרגולים הקודמים להוכחת
+ אלגוריתם חמדן.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ הקבוצה 
+\begin_inset Formula $C$
+\end_inset
+
+ לאחר 
+\begin_inset Formula $i$
+\end_inset
+
+ איטרציות.
+ יהיו 
+\begin_inset Formula $u_{i},v_{i}$
+\end_inset
+
+ הצמתים שנבחרו באיטרציה ה-
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח שלכל 
+\begin_inset Formula $i$
+\end_inset
+
+, קיים פתרון אופטימלי )כלומר 
+\begin_inset Formula $VC$
+\end_inset
+
+ מינימלי( שנסמנו 
+\begin_inset Formula $OPT$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $C_{i}\subseteq OPT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח באינדוקציה על 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+בסיס:
+\bar default
+ עבור 
+\begin_inset Formula $i=0$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $C_{i}=\emptyset$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $C_{i}\subseteq OPT$
+\end_inset
+
+ לכל 
+\begin_inset Formula $OPT$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\bar under
+צעד:
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula $OPT$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $C_{i}\subseteq OPT$
+\end_inset
+
+ ונוכיח שקיים 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $C_{i+1}\subseteq OPT'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מתקיים: 
+\begin_inset Formula $C_{i+1}=C_{i}\cup\left\{ v_{i+1}\right\} $
+\end_inset
+
+.
+ בחלוקה למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula $v_{i+1}\in OPT$
+\end_inset
+
+ אזי 
+\begin_inset Formula $OPT'=OPT$
+\end_inset
+
+ מקיים את הדרוש.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $v_{i+1}\notin OPT$
+\end_inset
+
+ אזי בהכרח 
+\begin_inset Formula $u_{i+1}\in OPT$
+\end_inset
+
+ שכן זהו פתרון אופטימלי, כלומר הוא 
+\begin_inset Formula $VC$
+\end_inset
+
+ וחייב לכסות את הקשת 
+\begin_inset Formula $u_{i+1}v_{i+1}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+נגדיר 
+\begin_inset Formula $OPT'=OPT\backslash\left\{ u_{i+1}\right\} \cup\left\{ v_{i+1}\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+טענה: 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ הוא 
+\begin_inset Formula $VC$
+\end_inset
+
+ בגודל מינימלי שמכיל את 
+\begin_inset Formula $C_{i+1}$
+\end_inset
+
+ )ולכן מסכים איתו(.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $OPT'$
+\end_inset
+
+ מכיל את 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ מכך ש-
+\begin_inset Formula $OPT$
+\end_inset
+
+ מכיל את 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ ולא הסרנו צמתים ב-
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ ובנוסף 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ מכיל את 
+\begin_inset Formula $v_{i+1}$
+\end_inset
+
+ מהגדרתו ולכן בסך הכל מתקיים 
+\begin_inset Formula $C_{i+1}\subseteq OPT'$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+כמו כן 
+\begin_inset Formula $\left|OPT\right|=\left|OPT'\right|$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ בגודל מינימלי.
+\begin_inset Newline newline
+\end_inset
+
+כל הקשתות שהוסרו על תחילת האיטרציה ה-
+\begin_inset Formula $i+1$
+\end_inset
+
+, מכוסות על ידי 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+.
+ מתקיים 
+\begin_inset Formula $C_{i}\subseteq OPT'$
+\end_inset
+
+ ולכן כל הקשתות הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל מכוסות על ידי 
+\begin_inset Formula $OPT'$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+בנוסף, הקשת 
+\begin_inset Formula $u_{i+1}v_{i+1}$
+\end_inset
+
+ מוכסה על ידי 
+\begin_inset Formula $v_{i+1}$
+\end_inset
+
+.
+ כל הקשתות האחרות מכוסות על ידי 
+\begin_inset Formula $OPT\backslash\left\{ u_{i+1}\right\} $
+\end_inset
+
+ ולכן על ידי 
+\begin_inset Formula $OPT$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+בסה
+\begin_inset Quotes erd
+\end_inset
+
+כ מתקיים כי 
+\begin_inset Formula $OPT'$
+\end_inset
+
+ הוא 
+\begin_inset Formula $VC$
+\end_inset
+
+ מינימלי שמכיל את 
+\begin_inset Formula $C_{i+1}$
+\end_inset
+
+ כנדרש.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+תרגיל )להוכיח כי 
+\begin_inset Formula $P=NP$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Standard
+נתון גרף 
+\begin_inset Formula $G=\left(V,E\right)$
+\end_inset
+
+ לא מכוון, ומספר 
+\begin_inset Formula $k\in\mathbb{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+יש להכריע בזמן פולינומי האם קיים 
+\begin_inset Formula $VC$
+\end_inset
+
+ של 
+\begin_inset Formula $G$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+קידוד
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Huffman
+\end_layout
+
+\begin_layout Standard
+המטרה: העברת מידע דרך ערוץ תקשורת בינארי תוך שימוש במספר מינימלי של ביטים.
+\end_layout
+
+\begin_layout Definition
+יהא 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ א
+\begin_inset Quotes erd
+\end_inset
+
+ב.
+ קוד פרפיקס בינארי מעל 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ הוא פונקציה 
+\begin_inset Formula $\Phi:\Sigma\rightarrow\left\{ 0,1\right\} ^{*}$
+\end_inset
+
+, כך שלכל 
+\begin_inset Formula $a,b\in\Sigma$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\Phi\left(a\right)$
+\end_inset
+
+ הוא לא רישא של 
+\begin_inset Formula $\Phi\left(b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+נתון א
+\begin_inset Quotes erd
+\end_inset
+
+ב 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+, ונתונה התפלגות 
+\begin_inset Formula $P$
+\end_inset
+
+ מעל 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ )לכל 
+\begin_inset Formula $\phi\in\Sigma$
+\end_inset
+
+ נתון 
+\begin_inset Formula $p_{\phi}$
+\end_inset
+
+, התדירות של 
+\begin_inset Formula $\phi$
+\end_inset
+
+(.
+ יש למצוא קוד פרפיקס בינארי 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ שעבורו הסכום 
+\begin_inset Formula $\Sigma_{\phi\in\Sigma}p_{\phi}\cdot\left|\Phi\left(\phi\right)\right|$
+\end_inset
+
+ מינימלי.
+\end_layout
+
+\begin_layout Standard
+אלגוריתם 
+\begin_inset Formula $Huffman$
+\end_inset
+
+ מוצא קוד מתאים כזה )כמו שנלמד בהרצאה( על ידי בניית עץ ובכל שלב איחוד שני
+ האיברים המינימלים.
+\end_layout
+
+\begin_layout Subsection
+תרגיל
+\end_layout
+
+\begin_layout Standard
+נתון א
+\begin_inset Quotes erd
+\end_inset
+
+ב 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ ותדירויות 
+\begin_inset Formula $p_{\phi}$
+\end_inset
+
+.
+ כך שלכל 
+\begin_inset Formula $\phi\in\Sigma$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $p_{\phi}<\frac{1}{3}$
+\end_inset
+
+.
+ הוכיחו כי לא קיימת בקוד 
+\begin_inset Formula $Huffman$
+\end_inset
+
+ מילת קוד באורך 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
