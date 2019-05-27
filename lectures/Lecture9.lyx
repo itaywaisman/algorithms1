@@ -1,0 +1,815 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-ams-extended-bytype
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package auto
+\inputencoding iso8859-8
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "default"
+\font_typewriter "default" "Miriam"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+הרצאה
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Author
+איתי ווייסמן
+\end_layout
+
+\begin_layout Section
+תכנון דינאמי
+\end_layout
+
+\begin_layout Standard
+טכניקה שמאפשרת לפרק בעיה באופן רקורסיבי לתתי-בעיות קטנות מאותו סוג.
+\end_layout
+
+\begin_layout Subsection
+שיבוץ משימות ממושקלות
+\end_layout
+
+\begin_layout Example
+נתונים: 
+\begin_inset Formula $n$
+\end_inset
+
+ אינטרבליםף כאשר כל אינטרבל נתון על ידי זמן התחלה 
+\begin_inset Formula $s_{i}$
+\end_inset
+
+ וזמן סיום 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+.
+ לאינטרוול ה-
+\begin_inset Formula $i$
+\end_inset
+
+ נתון רווח 
+\begin_inset Formula $w_{i}\ge0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+מטרה: למצוא אוסף אינטרוולים 
+\begin_inset Formula $S$
+\end_inset
+
+ כך שכל שני אינטרוולים ב-
+\begin_inset Formula $S$
+\end_inset
+
+ לא נחתכים, שממקסם את 
+\begin_inset Formula $\Sigma_{j\in S}w_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ראינו בשיעור הקודם שלא קיים כלל חמדן שפותר לנו את הבעיה הזו.
+ נרצה להשתמש בתכנון דינאמי.
+\end_layout
+
+\begin_layout Standard
+נזכר שמיינו את האינטרוולים: 
+\begin_inset Formula $f_{1}\le f_{2}\le\ldots\le f_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עבור האינטרוול 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ נסמן ב- 
+\begin_inset Formula $p\left(j\right)$
+\end_inset
+
+ את האינדקס הכי גדול כך ש- 
+\begin_inset Formula $f_{p\left(j\right)}\le s_{j}$
+\end_inset
+
+ )כלומר אינטרוול 
+\begin_inset Formula $I_{p\left(j\right)}$
+\end_inset
+
+ לא נחתך עם האינטרוול 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+(.
+ אם לא קיים אינטרוול שכזה, אזי 
+\begin_inset Formula $p\left(j\right)$
+\end_inset
+
+ יוגדר להיות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה:
+\bar default
+ מהן תתי הבעיות שנרצה?
+\end_layout
+
+\begin_layout Standard
+תתי הבעיות שיעניינו אותנו יהיו רישאות של המיון.
+ כלומר לכל 
+\begin_inset Formula $1\le j\le n$
+\end_inset
+
+ הרישא ה-
+\begin_inset Formula $j$
+\end_inset
+
+ תכיל את 
+\begin_inset Formula $\left\{ I_{1},I_{2}\ldots,I_{j}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+נסמן ב- 
+\begin_inset Formula $A\left(j\right)$
+\end_inset
+
+ את ערך פתרון אופטימלי עבור תת הבעיה ה-
+\begin_inset Formula $j$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+שאלה
+\bar default
+: האם יש קשר רקורסיבי בין 
+\begin_inset Formula $A\left(0\right),A\left(1\right)\ldots A\left(n\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Claim
+מתקיים:
+\begin_inset Formula 
+\[
+A\left(j\right)=\begin{cases}
+0 & j=0\\
+max\left\{ A\left(j-1\right),w_{j}+A\left(p\left(j\right)\right)\right\}  & 1\le j\le n
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+ו-
+\begin_inset Formula $A\left(0\right),\ldots,A\left(n\right)$
+\end_inset
+
+ מקיימים את הנוסחה הרקורסיבית לעיל.
+\end_layout
+
+\begin_layout Proof
+אם 
+\begin_inset Formula $j=0$
+\end_inset
+
+ אזי 
+\begin_inset Formula $A\left(0\right)$
+\end_inset
+
+ הוא ערך פתרון אופטימלי עבור קלט ריק לפי ההגדרה.
+ כלומר 
+\begin_inset Formula $A\left(0\right)=0$
+\end_inset
+
+ וזה בדיוק הגדרת נוסחת הרקורסיה.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula $1\le j\le n$
+\end_inset
+
+.
+ נניח כי קיים פתרון אופטימלי לבעיה ה-
+\begin_inset Formula $j$
+\end_inset
+
+ ונסמנו ב-
+\begin_inset Formula $S_{j}^{*}$
+\end_inset
+
+ איזשהו פתרון אופטימלי לתת הבעיה 
+\begin_inset Formula $\left\{ I_{1},\ldots,I_{j}\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula $I_{j}\notin S_{j}^{*}$
+\end_inset
+
+ אז 
+\begin_inset Formula $S_{j}^{*}$
+\end_inset
+
+ הוא בהכרח פתרון אופטימלי לתת הבעיה ה-
+\begin_inset Formula $j-1$
+\end_inset
+
+ )כי אחרת 
+\begin_inset Formula $S_{j}^{*}$
+\end_inset
+
+ לא היה פתרון אופטימלי לת הבעיה ה-
+\begin_inset Formula $j$
+\end_inset
+
+(.
+\begin_inset Newline newline
+\end_inset
+
+לכן בהכרח 
+\begin_inset Formula $\Sigma_{i\in S_{j}^{*}}w_{i}=A\left(j-1\right)$
+\end_inset
+
+ )מההגדרה(.
+\begin_inset Newline newline
+\end_inset
+
+זולכן בהכרח 
+\begin_inset Formula $A\left(j\right)=A\left(j-1\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+האם ייתכן כי מתקיים 
+\begin_inset Formula $\sum_{i\in S_{j}^{*}}w_{i}<w_{j}+A\left(p\left(j\right)\right)$
+\end_inset
+
+? לא, כי אז היה פתרון טוב יותר מ-
+\begin_inset Formula $S_{j}^{*}$
+\end_inset
+
+ לתת ההבעיה 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $I_{j}\in S_{j}^{*}$
+\end_inset
+
+, אזי 
+\begin_inset Formula $S_{j}^{*}\backslash\left\{ I_{j}\right\} $
+\end_inset
+
+ הוא פתרון אופטימלי לתת הבעיה 
+\begin_inset Formula $p\left(j\right)$
+\end_inset
+
+ )כי אחרת 
+\begin_inset Formula $S_{j}^{*}$
+\end_inset
+
+ לא היה פתרון אופטימלי לתת הבעיה 
+\begin_inset Formula $j$
+\end_inset
+
+(.
+\begin_inset Newline newline
+\end_inset
+
+לכן בהכרח 
+\begin_inset Formula $\sum_{i\in S_{j}^{*}}w_{j}=w_{j}+A\left(p\left(j\right)\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+לכן בהכרח 
+\begin_inset Formula $A\left(j\right)=w_{j}+A\left(p\left(j\right)\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+האם ייתכן שמתקיים: 
+\begin_inset Formula $A\left(j-1\right)>w_{j}+A\left(p\left(j\right)\right)$
+\end_inset
+
+? לא.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+לכן 
+\begin_inset Formula $A\left(0\right)\ldots A\left(n\right)$
+\end_inset
+
+ מקיימת את נוסחת הרקורסיה.
+\end_layout
+
+\begin_layout Question
+האם ניתן לחשב את 
+\begin_inset Formula $A\left(n\right)$
+\end_inset
+
+ במהירות בעזרת נוסחת הרקורסיה?
+\end_layout
+
+\begin_layout Solution
+בדומה לחישוב של סדרת פיבונאצ'י ניתן לשלם בזכרון ולחשב את 
+\begin_inset Formula $A\left(n\right)$
+\end_inset
+
+ בזמן לינארי.
+\end_layout
+
+\begin_layout Algorithm
+האלגוריתם הסופי
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מחשבים את 
+\begin_inset Formula $p\left(1\right),p\left(2\right)\ldots p\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+עבור 
+\begin_inset Formula $j=0$
+\end_inset
+
+ עד 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מחשבים את 
+\begin_inset Formula $A\left(j\right)$
+\end_inset
+
+ לפי נוסחת הרקורסיה.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+מחזירים את 
+\begin_inset Formula $A\left(n\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+סיבוכיות: 
+\begin_inset Formula $O\left(n\right)$
+\end_inset
+
+ - בהנחה שלא צריך למיין את האינטרוולים 
+\begin_inset Formula $f_{1}\le\ldots\le f_{n}$
+\end_inset
+
+(
+\end_layout
+
+\begin_layout Subsection
+סדר ביצוע כפל מטריצות
+\end_layout
+
+\begin_layout Standard
+נתון: תרגיל כפל מטריצות: 
+\begin_inset Formula $A_{1}\cdot A_{2}\cdot\ldots\cdot A_{n}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ במימדים 
+\begin_inset Formula $p_{i-1}\times p_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+מטרה: למצוא סדר לביצוע התרגיל שממזער את מספר הכפלים האריתמטיים.
+\end_layout
+
+\begin_layout Standard
+הערה: כפל של 
+\begin_inset Formula $A\cdot B$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $A$
+\end_inset
+
+ במימדים 
+\begin_inset Formula $p\times q$
+\end_inset
+
+ ו-ֲ
+\begin_inset Formula $B$
+\end_inset
+
+ במימדים 
+\begin_inset Formula $q\times r$
+\end_inset
+
+ לוקח 
+\begin_inset Formula $pqr$
+\end_inset
+
+ כפלים(
+\end_layout
+
+\begin_layout Example
+עבור המטריצות: 
+\begin_inset Formula $A_{1}\left(10\times100\right),A_{2}\left(100\times5\right),A_{3}\left(5\times50\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+אם נכפול בסדר הבא: 
+\begin_inset Formula $\left(A_{1}A_{2}\right)A_{3}$
+\end_inset
+
+ נקבל כי מספר פעולות הכפל יהיו: 
+\begin_inset Formula $10\cdot100\cdot5+10\cdot5\cdot50=7500$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+אם נפכפול בסדר הבא:ף 
+\begin_inset Formula $A_{1}\left(A_{2}A_{3}\right)$
+\end_inset
+
+ נקבל כי מספר פעולות הכפל יהיו 
+\begin_inset Formula $75000$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+על כן נעדיף את הסדר הראשון.
+\end_layout
+
+\begin_layout Question
+כמה אפשרויות יש לביצוע תרגיל באורך 
+\begin_inset Formula $n$
+\end_inset
+
+? 
+\begin_inset Formula $p\left(n\right)$
+\end_inset
+
+ - נסמן את מסז' האפשרויות לשים סוגריים על תרגיל באורך 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ מתקיים: 
+\begin_inset Formula 
+\[
+p\left(n\right)=\begin{cases}
+1 & n=1\\
+\sum_{k=1}^{n-1}p\left(k\right)p\left(n-k\right) & else
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Question
+הפתרון הזה הוא מספרי קטלן.
+ כלומר 
+\begin_inset Formula $p\left(n\right)=C\left(n-1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Question
+ניזכר כי מתקיים: 
+\begin_inset Formula $C\left(n\right)=\frac{1}{n+1}{2n \choose n}=\Omega\left(\frac{4^{n}}{n^{\frac{3}{2}}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Question
+לכן לא ניתן לעבור באופן יעיל על כל האפשרויות )זהו מספר מאוד גדול(.
+\end_layout
+
+\begin_layout Standard
+נגדיר תת בעיה: לכל תת-סדרה של התרגיל, כלומר 
+\begin_inset Formula $1\le i\le j\le n$
+\end_inset
+
+ את הבעיה 
+\begin_inset Formula $A_{i}A_{i+1}\ldots A_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+נסמן ב- 
+\begin_inset Formula $M\left(i,j\right)$
+\end_inset
+
+ את מס' הכפלים האריתמטיים הקטן ביורת שצריך בשביל לפתור את 
+\begin_inset Formula $A_{i}A_{i+1}\ldots A_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נראה קשר רקורסיבי:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M\left(i,j\right)=\begin{cases}
+0 & i=j\\
+min_{i\le k<j}\left\{ M\left(i,k\right)+M\left(k+1,j\right)+p_{i-1}p_{k}p_{j}\right\}  & else
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula $M\left(i,j\right)$
+\end_inset
+
+ מקיים את נוסחת הרקורסיה.
+\end_layout
+
+\begin_layout Question
+איך לחשב באופן מהיר את נוסחת הרקורסיה?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=\left(\begin{array}{ccccc}
+ & 1 & 2 & \ldots & n\\
+1 & 0 &  &  & ?\\
+2 & X & 0\\
+\vdots & X & \ddots & \ddots\\
+n & X & X & X & 0
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנו מחפשים את הערך של ? במטריצה.
+\end_layout
+
+\begin_layout Standard
+נשים לב שאם מייצגים את 
+\begin_inset Formula $M$
+\end_inset
+
+ כמטריצה:
+\end_layout
+
+\begin_layout Itemize
+תנאי העצירה נותן את ערכי האלכסון
+\end_layout
+
+\begin_layout Itemize
+מעניינים רק מבשולש העליון של המטריצה
+\end_layout
+
+\begin_layout Itemize
+לפי נוסחת הרקורסיה 
+\begin_inset Formula $M\left(i,j\right)$
+\end_inset
+
+ תלוי בתאים במטריצה שהם משמאלו ומתחתיו.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+קיימים הרבה סדרים בהם ניתן לחשב את המטריצה 
+\begin_inset Formula $M$
+\end_inset
+
+ כך שברגע שמחשבים את 
+\begin_inset Formula $M\left(i,j\right)$
+\end_inset
+
+ כל התאים במרטיצה שהוא תלוי בהם כבר חושבו.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+סיבוכיות: בכל סדר חישוב שכזה חישוב תא 
+\begin_inset Formula $M\left(i,j\right)$
+\end_inset
+
+ לוקח זמן של 
+\begin_inset Formula $O\left(j-i\right)$
+\end_inset
+
+.
+ במקרה הגרוע זה 
+\begin_inset Formula $O\left(n\right)$
+\end_inset
+
+ ולכן זמן ריצה זה: 
+\begin_inset Formula $O\left(n^{3}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
